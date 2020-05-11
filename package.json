@@ -1,0 +1,22 @@
+{
+  "name": "vuepress-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.0",
+    "sass-loader": "^8.0.2",
+    "vuepress": "^1.4.1",
+    "vuepress-bar": "^0.3.0",
+    "vuepress-plugin-element-tabs": "^0.2.8"
+  },
+  "dependencies": {
+    "integration-web-core--socle": "^2.6.1"
+  }
+}
