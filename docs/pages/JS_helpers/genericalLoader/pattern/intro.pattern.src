@@ -1,0 +1,14 @@
+/**
+ * Don't forget to import the class on your project
+ * import GenericalLoader from 'integration-web-core--socle/js/assets/modules/_genericalLoader.class.js';
+ */
+import GenericalLoader from "js/assets/modules/_genericalLoader.class";
+
+//Object instanciation
+const loaderObj = new GenericalLoader("https://lmfr-site.prod.leroymerlin.fr/static/images/common/loader.svg");
+
+//Append loader on DOM 
+loaderObj.append(document.querySelector('div.myLoaderContainer'));
+
+//Remove loader on DOM
+//loaderObj.remove(document.querySelector('div.myLoaderContainer'));
