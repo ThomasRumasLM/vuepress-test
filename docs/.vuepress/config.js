@@ -3,6 +3,7 @@ const { nav, sidebar } = require("vuepress-bar")(`${__dirname}/..`);
 module.exports = {
     title: 'Core documentation',
     description: 'Just playing around',
+    base: '/documentation/',
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
