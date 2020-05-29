@@ -3,6 +3,8 @@ title: 'Typography'
 order: 1
 ---
 
+# Typography
+
 You can use:
 
 <!-- * [MOZAIC Font Families](http://mozaic.adeo.cloud/Foundations/Typography/FontFamilies/) -->

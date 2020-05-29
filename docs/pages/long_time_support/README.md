@@ -14,7 +14,7 @@ title: "Long time support"
     title="End of LTS for legacy Buttons"
     text="We now ue the CSS classes of Mozaic buttons. You have until this date to update your applications."
     linklabel="Buttons documentation"
-    linkhref="#"
+    linkhref="/pages/components/buttons/"
 />
 
 <timelineItem
@@ -22,8 +22,8 @@ title: "Long time support"
     date="10 July 2020"
     title="End of LTS for legacy Links"
     text="We now use the CSS classes of Mozaic links. You have until this date to update your applications."
-    linkLabel="Links documentation"
-    linkHref="#"
+    linklabel="Links documentation"
+    linkhref="#"
 />
 
 <timelineItem
@@ -31,8 +31,8 @@ title: "Long time support"
     date="02 august 2020"
     title="End of LTS for legacy Titles"
     text="We now use the CSS classes of Mozaic headings. You have until this date to update your applications."
-    linkLabel="Title documentation"
-    linkHref="#"
+    linklabel="Title documentation"
+    linkhref="#"
 />
 
 </timeline>

@@ -13,9 +13,7 @@ title: Buttons
 ## Depreciated
 > Long time support of former button classes will end on **10th may 2020**.
 
-## Code
-
-:::: tabs 
+:::: tabs
 
 ::: tab freemarker
 <'components/buttons/freemarker.md'>

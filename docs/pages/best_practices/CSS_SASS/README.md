@@ -3,7 +3,7 @@ title: 'CSS / SASS'
 order: 1
 ---
 
-:::: tabs 
+:::: tabs
 
 ::: tab SCSS
 <!-- <'components/buttons/freemarker.md'> -->

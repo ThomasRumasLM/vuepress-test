@@ -5,7 +5,7 @@
     <div class="cd-timeline__content cd-timeline__content--type">
       <h2 class="cd-timeline__content-title">{{title}}</h2>
       <p class="cd-timeline__content-text">{{text}}</p>
-      <a href="linkhref" class="cd-timeline__content-link">{{linklabel}}</a>
+      <a :href="linkhref" class="cd-timeline__content-link">{{linklabel}}</a>
     </div>
   </div>
 </template>

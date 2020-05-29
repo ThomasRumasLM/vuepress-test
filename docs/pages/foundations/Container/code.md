@@ -1,8 +1,3 @@
----
-title: 'Code'
-order: 2
----
-
 ## Import
 
 ```scss
@@ -15,5 +10,3 @@ order: 2
 ## The container layout
 
 To manage your page main wrapper respecting the width automatically, you can use ``kl-container`.
-
-<pattern path="src/pages/Foundations/Container/pattern/intro"></pattern>

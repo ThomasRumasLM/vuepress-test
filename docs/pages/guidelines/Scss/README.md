@@ -3,7 +3,7 @@ title: 'SCSS'
 order: 2
 ---
 
-:::: tabs 
+:::: tabs
 
 ::: tab BEM
 <'guidelines/Scss/bem.md'>

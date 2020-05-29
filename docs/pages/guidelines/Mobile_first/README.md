@@ -51,7 +51,7 @@ Each principle is decline in guidelines for each type of job in a feature team.
 | Need for demonstration and support for the use / administration / animation of a new page or new functionality, new processes, etc. / Request and participate in the demonstration and support of a new page or a new feature | Present the preview on the “real” device or representing the experience on the device | Sensitize the UI and UX of my feature team to front-end constraints, semantic logic and good practices of responsive |
 | Need for support by designers and front-ends in raising awareness of trades other than features (RPI, central, comm, ...) | Present the preview on the “real” device or representing the experience on the device | Request and validate patterns in advance of phase and if possible during creation |
 
-:::: tabs 
+:::: tabs
 
 ::: tab FAQ
 <'guidelines/Mobile_first/faq.md'>

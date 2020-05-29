@@ -3,6 +3,8 @@ title: 'Icons'
 order: 1
 ---
 
+# Icons
+
 You can use:
 
 * [MOZAIC Icons](http://mozaic.adeo.cloud/Foundations/Icons/catalog/)

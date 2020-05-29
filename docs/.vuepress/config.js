@@ -5,7 +5,10 @@ const dirPath = path.join(process.cwd(), 'docs/pages/');
 module.exports = {
     title: 'Core documentation',
     description: 'Just playing around',
-    base: '/vuepress-test/',
+    // base: '/vuepress-test/',
+    repo: '/vuepress-test/',
+    editLinks: true,
+    editLinkText: 'Edit in GitHub',
     markdown: {
         lineNumbers: true,
         plugins: [
@@ -23,6 +26,7 @@ module.exports = {
         ],
         // displayAllHeaders: true,
         smoothScroll: true,
+        sidebarDepth: 0,
         sidebar: [
           '/pages/long_time_support/',
           {
@@ -45,7 +49,9 @@ module.exports = {
             title: 'Components',
             path: '/pages/components/',
             children: [
-              '/pages/components/buttons/'
+              '/pages/components/buttons/',
+              '/pages/components/card/',
+              '/pages/components/delivery-product/'
             ]
           },
           {
