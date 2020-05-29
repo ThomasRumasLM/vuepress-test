@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "integration-web-core--socle": "^2.11.1",
     "@vuepress/plugin-active-header-links": "^1.5.0",
     "markdown-it-include": "^1.1.1",
