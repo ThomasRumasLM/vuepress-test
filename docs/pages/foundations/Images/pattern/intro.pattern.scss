@@ -1,0 +1,8 @@
+@import '../css/assets/sass/_common/01-setting-tools/_all-settings.scss';
+@import '../css/assets/sass/_common/09-utilities/_ratio.utility.scss';
+
+.example {
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 25%;
+}
