@@ -53,4 +53,4 @@ commitlint.examples.js
 
 ## ------ Globaly shared gitignore (copied from lmfr-int-socle-freemarker) ------ END -- ##
 
-## ------ Insert specific gitignore for your application below this line ------ ##
+**/.DS_Store

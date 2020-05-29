@@ -1,0 +1,14 @@
+body {
+	padding: 1rem 1rem 0;
+}
+
+.parent {
+	padding: 1rem;
+	border: 2px #000 solid;
+}
+.child1, .child2 {
+	margin: .5rem 0;
+	padding: .5rem;
+	border: 2px red solid;
+	display: inline-block;
+}
