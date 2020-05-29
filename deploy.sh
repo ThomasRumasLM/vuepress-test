@@ -20,6 +20,6 @@ git commit -m 'chore(documentation): deploy documentation'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:com:ThomasRumasLM/vuepress-test.git master:gh-pages
+git push -f git@github.com:ThomasRumasLM/vuepress-test.git master:gh-pages
 
 cd -
