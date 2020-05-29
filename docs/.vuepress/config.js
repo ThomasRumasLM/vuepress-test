@@ -5,7 +5,7 @@ const dirPath = path.join(process.cwd(), 'docs/pages/');
 module.exports = {
     title: 'Core documentation',
     description: 'Just playing around',
-    base: '/documentation/',
+    base: '/vuepress-test/',
     markdown: {
         lineNumbers: true,
         plugins: [
