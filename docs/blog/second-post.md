@@ -1,5 +1,5 @@
 ---
-title: Ssecond test post
+title: Second test post
 date: 2020-05-28
 description: This is a test
 ---

@@ -5,10 +5,10 @@ const dirPath = path.join(process.cwd(), 'docs/pages/');
 module.exports = {
     title: 'Core documentation',
     description: 'Just playing around',
-    // base: '/vuepress-test/',
-    repo: '/vuepress-test/',
-    editLinks: true,
-    editLinkText: 'Edit in GitHub',
+    base: '/vuepress-test/',
+    head: [
+      ['link', { rel: 'icon', href: '/images/favicon.png' }]
+    ],
     markdown: {
         lineNumbers: true,
         plugins: [
@@ -138,6 +138,20 @@ module.exports = {
         ]
     },
     plugins: [
-        'vuepress-plugin-element-tabs'
+        'vuepress-plugin-element-tabs',
+        // 'vuepress-plugin-mermaidjs',
+        [
+          'mermaidjs',
+          {
+            theme:'forest',
+            themeCSS: ".section { fill: transparent; } .tick text { font-size: 1rem;}",
+            gantt: {
+              barHeight: 40,
+              barGap: 20,
+              fontSize: 24,
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'
+            }
+          }
+        ]
     ]
 }

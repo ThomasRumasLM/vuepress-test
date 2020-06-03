@@ -7,42 +7,42 @@ The goal of this documentation's section is to have a vision of interaction betw
 
 ## Freemarker
 
-![Freemarker](/images/Socle/Freemarker.jpg)
+<img :src="$withBase('/images/Socle/Freemarker.jpg')" alt="Freemarker">
 
 ## Javascript
 
 #### Accordion
-![Accordion](/images/Socle/Accordion.jpg)
+<img :src="$withBase('/images/Socle/Accordion.jpg')" alt="Accordion">
 
 #### Carousel
-![Carousel](/images/Socle/Carousel.jpg)
+<img :src="$withBase('/images/Socle/Carousel.jpg')" alt="Carousel">
 
 #### Collapse
-![Collapse](/images/Socle/Collapse.jpg)
+<img :src="$withBase('/images/Socle/Collapse.jpg')" alt="Collapse">
 
 #### ContentLoader
-![contentLoader](/images/Socle/contentLoader.jpg)
+<img :src="$withBase('/images/Socle/contentLoader.jpg')" alt="contentLoader">
 
 #### Datepicker
-![Datepicker](/images/Socle/Datepicker.jpg)
+<img :src="$withBase('/images/Socle/Datepicker.jpg')" alt="Datepicker">
 
 #### GenericalLoader
-![GenericalLoader](/images/Socle/GenericalLoader.jpg)
+<img :src="$withBase('/images/Socle/GenericalLoader.jpg')" alt="GenericalLoader">
 
 #### HourPicker
-![HourPicker](/images/Socle/HourPicker.jpg)
+<img :src="$withBase('/images/Socle/HourPicker.jpg')" alt="HourPicker">
 
 #### Pagination
-![Pagination](/images/Socle/Pagination.jpg)
+<img :src="$withBase('/images/Socle/Pagination.jpg')" alt="Pagination">
 
 #### Popin
-![Popin](/images/Socle/Popin.jpg)
+<img :src="$withBase('/images/Socle/Popin.jpg')" alt="Popin">
 
 #### ShowMore
-![ShowMore](/images/Socle/ShowMore.jpg)
+<img :src="$withBase('/images/Socle/ShowMore.jpg')" alt="ShowMore">
 
 #### Tooltip
-![Tooltip](/images/Socle/Tooltip.jpg)
+<img :src="$withBase('/images/Socle/Tooltip.jpg')" alt="Tooltip">
 
 ## Contribute 
 

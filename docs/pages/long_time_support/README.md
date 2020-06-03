@@ -2,7 +2,16 @@
 title: "Long time support"
 ---
 
-[![](https://mermaid.ink/img/eyJjb2RlIjoiZ2FudHRcblx0dGl0bGUgTG9uZyB0aW1lIHN1cHBvcnRcblx0ZGF0ZUZvcm1hdCBERC1NTS1ZWVlZXG5cdGF4aXNGb3JtYXQgJWQvJW0vJXlcblx0QnV0dG9uczogYWN0aXZlLCBjcml0LCAwMy0wMi0yMDIwLCAxNTBkXG5cdExpbmtzOmFjdGl2ZSwgY3JpdCwgMDMtMDItMjAyMCwgMTUwZFxuXHRIZWFkaW5nczphY3RpdmUsIGNyaXQsIDAyLTAzLTIwMjAsIDE1MGQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ2FudHRcblx0dGl0bGUgTG9uZyB0aW1lIHN1cHBvcnRcblx0ZGF0ZUZvcm1hdCBERC1NTS1ZWVlZXG5cdGF4aXNGb3JtYXQgJWQvJW0vJXlcblx0QnV0dG9uczogYWN0aXZlLCBjcml0LCAwMy0wMi0yMDIwLCAxNTBkXG5cdExpbmtzOmFjdGl2ZSwgY3JpdCwgMDMtMDItMjAyMCwgMTUwZFxuXHRIZWFkaW5nczphY3RpdmUsIGNyaXQsIDAyLTAzLTIwMjAsIDE1MGQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
+# Long time support
+
+```mermaid
+gantt
+dateFormat DD-MM-YYYY
+axisFormat %d/%m/%y
+Buttons: active, crit, 03-02-2020, 150d
+Links:active, crit, 03-02-2020, 150d
+Headings:active, crit, 02-03-2020, 150d
+```
 
 ---
 

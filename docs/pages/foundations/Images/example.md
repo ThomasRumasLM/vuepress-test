@@ -2,32 +2,32 @@
     <div class="ratio-container">
     <div class="example">
     <div class="ku-ratio ku-ratio--16by9">
-        <img src="/images/ratio/16_9.png" class="ku-ratio__content"/>
+        <img :src="$withBase('/images/ratio/16_9.png')" class="ku-ratio__content"/>
     </div>
     </div>
     <div class="example">
     <div class="ku-ratio ku-ratio--3by2">
-        <img src="/images/ratio/3_2.png" class="ku-ratio__content"/>
+        <img :src="$withBase('/images/ratio/3_2.png')" class="ku-ratio__content"/>
     </div>
     </div>
     <div class="example">
     <div class="ku-ratio ku-ratio--4by3">
-        <img src="/images/ratio/4_3.png" class="ku-ratio__content"/>
+        <img :src="$withBase('/images/ratio/4_3.png')" class="ku-ratio__content"/>
     </div>
     </div>
     <div class="example">
     <div class="ku-ratio ku-ratio--1by1">
-        <img src="/images/ratio/1_1.png" class="ku-ratio__content"/>
+        <img :src="$withBase('/images/ratio/1_1.png')" class="ku-ratio__content"/>
     </div>
     </div>
     <div class="example">
     <div class="ku-ratio ku-ratio--3by4">
-        <img src="/images/ratio/3_4.png" class="ku-ratio__content"/>
+        <img :src="$withBase('/images/ratio/3_4.png')" class="ku-ratio__content"/>
     </div>
     </div>
     <div class="example">
     <div class="ku-ratio ku-ratio--2by3">
-        <img src="/images/ratio/2_3.png" class="ku-ratio__content"/>
+        <img :src="$withBase('/images/ratio/2_3.png')" class="ku-ratio__content"/>
     </div>
     </div>
     </div>
