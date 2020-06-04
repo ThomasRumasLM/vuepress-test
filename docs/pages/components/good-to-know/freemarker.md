@@ -1,30 +1,33 @@
 ## File to import
 
-```json
-<#import "../../macros/common/card.ftl" as card>
+```ftl
+<#import "../../macros/common/good_to_know.ftl" as goodToKnow>
 ```
 
-## The Card macro
+## The Good-To-Know macro
 
 ```ftl
-<#assign cardExample = {
-    "type": "benefits",
-    "icon": "User_Contact_Mail_48px",
+<#assign goodToKnowExample = {
     "title": "My title",
-    "description": "My description"
+    "description": "My description",
+    "link": {
+        "label": "my link label",
+        "href": "/my-url"
+    }
 }/>
 
-<@card.card configCard = cardExample />
+<@goodToKnow.goodToKnow configGoodToKnow = goodToKnowExample />
 ```
 
 #### Specific options
 
 ```ftl
-"type": "benefits", // STRING, mandatory - "benefits"/"steps"
-"icon": "icon_id_24px", // STRING, mandatory
-"cssClass": "myClass mySecondClass", // STRING, optionnal
 "title": "My title", // STRING, optionnal
 "description": "My description", // STRING, optionnal
+"link": {
+    "label": "my link label", // OBJECT, must contain "label" and "href" keys
+    "href": "/my-url"
+},
 "dataTagco": "{'titi' : 'tata', 'tutu' : 'toto'}", // STRING, optionnal
 "dataTcevent": "tc-event-example", // STRING, optionnal
 "cerberus": "data_cerberus", // STRING, optionnal

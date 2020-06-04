@@ -6,7 +6,7 @@
 
 ## The Button macro
 
-```java
+```ftl
 <#assign buttonExample = {
     "color": "primary-02",
     "size": "s"
@@ -17,7 +17,7 @@
 
 #### Specific options
 
-```java
+```ftl
 "id": "js-button-example", // STRING, optionnal
 "type": "submit", // STRING, optionnal - "button" if empty
 "color": "primary-02", // STRING, optionnal - "primary-02", "danger", "neutral"

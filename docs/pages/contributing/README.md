@@ -60,7 +60,7 @@ Each data that will be write that it's not declared as a know parameter. Will be
 
 So after that to construct HTML data attributes, you can do it : 
 
-```java
+```ftl
 <#assign dataAttributes=""/>
 <#if dataSup?is_hash>
     <#list dataSup as key, value>

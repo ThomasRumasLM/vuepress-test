@@ -49,9 +49,16 @@ module.exports = {
             title: 'Components',
             path: '/pages/components/',
             children: [
+              '/pages/components/accordion/',
               '/pages/components/buttons/',
               '/pages/components/card/',
-              '/pages/components/delivery-product/'
+              '/pages/components/delivery-product/',
+              '/pages/components/divider/',
+              '/pages/components/flags/',
+              '/pages/components/good-to-know/',
+              '/pages/components/grid/',
+              '/pages/components/header-hero/',
+              '/pages/components/links/'
             ]
           },
           {
@@ -153,5 +160,15 @@ module.exports = {
             }
           }
         ]
-    ]
+    ],
+    configureWebpack: {
+      module: {
+        rules: [
+          {
+            test: /\.txt$/i,
+            use: 'raw-loader',
+          },
+        ],
+      }
+    }
 }

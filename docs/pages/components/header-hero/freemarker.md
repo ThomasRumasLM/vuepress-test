@@ -1,30 +1,33 @@
 ## File to import
 
-```json
-<#import "../../macros/common/card.ftl" as card>
+```ftl
+<#import "../../macros/common/header_hero.ftl" as headerHero>
 ```
 
-## The Card macro
+## The Header Hero macro
 
 ```ftl
-<#assign cardExample = {
-    "type": "benefits",
-    "icon": "User_Contact_Mail_48px",
+<#assign headerHeroExample = {
     "title": "My title",
-    "description": "My description"
+    "description": "My description",
+    "image": {
+        "src": "/my-src-url",
+        "alt": "My image alt"
+    }
 }/>
 
-<@card.card configCard = cardExample />
+<@headerHero.headerHero configHeaderHero = headerHeroExample />
 ```
 
 #### Specific options
 
 ```ftl
-"type": "benefits", // STRING, mandatory - "benefits"/"steps"
-"icon": "icon_id_24px", // STRING, mandatory
-"cssClass": "myClass mySecondClass", // STRING, optionnal
 "title": "My title", // STRING, optionnal
 "description": "My description", // STRING, optionnal
+"image": {
+    "src": "/my-src-url", // OBJECT, must contain "src" and "alt" keys
+    "alt": "My image alt"
+},
 "dataTagco": "{'titi' : 'tata', 'tutu' : 'toto'}", // STRING, optionnal
 "dataTcevent": "tc-event-example", // STRING, optionnal
 "cerberus": "data_cerberus", // STRING, optionnal

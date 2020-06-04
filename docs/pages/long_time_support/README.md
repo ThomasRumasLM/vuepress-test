@@ -11,6 +11,10 @@ axisFormat %d/%m/%y
 Buttons: active, crit, 03-02-2020, 150d
 Links:active, crit, 03-02-2020, 150d
 Headings:active, crit, 02-03-2020, 150d
+Toasters:active, crit, 28-05-2020, 90d
+Flags:active, crit, 28-05-2020, 90d
+Tags:active, crit, 28-05-2020, 90d
+Rating stars:active, crit, 28-05-2020, 90d
 ```
 
 ---
@@ -42,6 +46,42 @@ Headings:active, crit, 02-03-2020, 150d
     text="We now use the CSS classes of Mozaic headings. You have until this date to update your applications."
     linklabel="Title documentation"
     linkhref="#"
+/>
+
+<timelineItem
+    type="danger"
+    date="28 August 2020"
+    title="End of LTS for legacy Notifications/Toasters"
+    text="We now ue the CSS classes of Mozaic notifications/toasters. You have until this date to update your applications."
+    linklabel="Toasters documentation"
+    linkhref="/integration-web-core--socle/Components/toasters/"
+/>
+
+<timelineItem
+    type="danger"
+    date="28 August 2020"
+    title="End of LTS for legacy Flags"
+    text="We now ue the CSS classes of Mozaic flags. You have until this date to update your applications."
+    linklabel="Flags documentation"
+    linkhref="/integration-web-core--socle/Components/flags/"
+/>
+
+<timelineItem
+    type="danger"
+    date="28 August 2020"
+    title="End of LTS for legacy Tags"
+    text="We now ue the CSS classes of Mozaic tags. You have until this date to update your applications."
+    linklabel="Tags documentation"
+    linkhref="/integration-web-core--socle/Components/tags/"
+/>
+
+<timelineItem
+    type="danger"
+    date="28 August 2020"
+    title="End of LTS for legacy Rating stars"
+    text="We now ue the CSS classes of Mozaic rating stars. You have until this date to update your applications."
+    linklabel="Rating stars documentation"
+    linkhref="/integration-web-core--socle/Components/rating-stars/"
 />
 
 </timeline>
