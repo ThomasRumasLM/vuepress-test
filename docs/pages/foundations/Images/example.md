@@ -1,4 +1,4 @@
-<showHtml>
+<ShowHtml>
     <div class="ratio-container">
     <div class="example">
     <div class="ku-ratio ku-ratio--16by9">
@@ -31,7 +31,7 @@
     </div>
     </div>
     </div>
-</showHtml>
+</ShowHtml>
 
 <style lang="scss" scoped>
 @import 'node_modules/integration-web-core--socle/css/assets/sass/_common/01-setting-tools/_all-settings.scss';

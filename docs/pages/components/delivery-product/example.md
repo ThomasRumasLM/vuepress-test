@@ -1,4 +1,4 @@
-<showHtml>
+<ShowHtml>
 <div class="example">
     <ul class="km-delivery-product">
         <li class="km-delivery-product__item">
@@ -30,7 +30,7 @@
         </li>
     </ul>
 </div>
-</showHtml>
+</ShowHtml>
 
 <style lang="scss" scoped>
 @import 'node_modules/integration-web-core--socle/css/assets/sass/_common/01-setting-tools/_all-settings.scss';

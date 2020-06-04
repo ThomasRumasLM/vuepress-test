@@ -10,11 +10,11 @@ title: 'Delivery product'
 
 :::: tabs
 
-::: tab freemarker
+::: tab Freemarker
 <'components/delivery-product/freemarker.md'>
 :::
 
-::: tab scss
+::: tab SCSS
 <'components/delivery-product/style.md'>
 :::
 

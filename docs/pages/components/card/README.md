@@ -11,11 +11,11 @@ title: 'Cards'
 
 :::: tabs
 
-::: tab freemarker
+::: tab Freemarker
 <'components/card/freemarker.md'>
 :::
 
-::: tab scss
+::: tab SCSS
 <'components/card/style.md'>
 :::
 

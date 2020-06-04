@@ -16,7 +16,7 @@ This macro return true if :
 ## Why
 Currently, to display an element, we have do this : 
 
-```java
+```ftl
 <#assign myNumber   = 1>
 <#assign myString   = "Hello">
 <#assign myBoolean  = true>

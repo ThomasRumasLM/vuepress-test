@@ -18,7 +18,7 @@ _**/!\ Opération à répéter pour chaque module**_
 
 <br>_Exemple de `package.json` :_
 
-```json
+```ftl
 ...
 
 "scripts": {

@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "timelineItem",
+  name: "TimelineItem",
   props: ["type", "date", "title", "text", "linklabel", "linkhref"]
 };
 </script>

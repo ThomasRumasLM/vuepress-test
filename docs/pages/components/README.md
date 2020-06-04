@@ -2,8 +2,6 @@
 title: Components
 ---
 
-[Buttons](buttons/)
-
 > Here, you can find design components to create and build new graphic components
 
 ## Available MOZAIC Components 

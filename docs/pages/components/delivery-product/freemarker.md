@@ -1,6 +1,6 @@
 > The FMK macro **does not exist yet** .
 ## File to import
-```json
+```ftl
 //
 ```
 ## The Flag macro
@@ -11,6 +11,6 @@
 
 #### Specific options
 
-```json
+```ftl
 //
 ```

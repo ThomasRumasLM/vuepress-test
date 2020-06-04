@@ -1,12 +1,12 @@
 ## File to import
 
-```json
+```ftl
 <#import "../../macros/common/image.ftl" as image>
 ```
 
 ## The Button macro
 
-```java
+```ftl
  <@image.image alt="" class="" src="" ratio="16by9"/>
 ```
 
@@ -21,7 +21,7 @@ Here are **6 ratios available** :
 - 3:4 `3by4`
 - 2:3 `2by3`
 
-```java
+```ftl
 "alt" : "my description" //STRING, mandatory
 "class": "myClass" //STRING, mandatory
 "src": "myPicture" //STRING, mandatory

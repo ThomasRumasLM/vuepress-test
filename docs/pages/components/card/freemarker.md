@@ -1,12 +1,12 @@
 ## File to import
 
-```json
+```ftl
 <#import "../../macros/common/card.ftl" as card>
 ```
 
 ## The Card macro
 
-```java
+```ftl
 <#assign cardExample = {
     "type": "benefits",
     "icon": "User_Contact_Mail_48px",
@@ -19,7 +19,7 @@
 
 #### Specific options
 
-```java
+```ftl
 "type": "benefits", // STRING, mandatory - "benefits"/"steps"
 "icon": "icon_id_24px", // STRING, mandatory
 "cssClass": "myClass mySecondClass", // STRING, optionnal
