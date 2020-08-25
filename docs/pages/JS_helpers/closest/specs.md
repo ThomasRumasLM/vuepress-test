@@ -1,9 +1,3 @@
----
-title: 'Specs'
-order: 2
----
-
-
 ## How
 **lm.getClosest**
 ```javascript

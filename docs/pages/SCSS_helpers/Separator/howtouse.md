@@ -1,8 +1,3 @@
----
-title: 'How to use'
-order: 2
----
-
 ## How to use
 
 The **add-separator()** SCSS mixin is a separator pseudo-element to an html element.

@@ -1,8 +1,3 @@
----
-title: 'How to use'
-order: 2
----
-
 ## How to use
 
 The **get-font-size()** SCSS function only accept 2 params:

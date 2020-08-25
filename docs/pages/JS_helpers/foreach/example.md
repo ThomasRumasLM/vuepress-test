@@ -1,7 +1,28 @@
----
-title: 'Example'
-order: 3
----
+<template>
+<ShowHtml>
+<ul class="js-characters">
+	<li>Bob</li>
+	<li>Patrick</li>
+	<li>Carlo</li>
+	<li>Gary</li>
+</ul>
+</ShowHtml>
+</template>
 
-## Example
-<pattern path="src/pages/JS_helpers/foreach/pattern/intro"></pattern>
+<script>
+export default {
+    mounted() {
+        const output = document.querySelectorAll('.js-characters li');
+        lm.forEach(output, (item, i) => {
+        console.log(`&bull; ${item.innerHTML}`);
+        });
+        /*  >
+            • Bob
+            • Patrick
+            • Carlo
+            • Gary 
+        */
+
+    }
+}
+</script>

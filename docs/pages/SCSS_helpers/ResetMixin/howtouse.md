@@ -1,8 +1,3 @@
----
-title: 'How to use'
-order: 2
----
-
 ## How to use
 
 The **reset mixins** is a file witch contains all mixins who can be reused like the `resetButton` for example:

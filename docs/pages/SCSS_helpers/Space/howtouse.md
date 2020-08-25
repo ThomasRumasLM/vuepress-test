@@ -1,8 +1,3 @@
----
-title: 'How to use'
-order: 2
----
-
 ## How to use
 
 The **get-space()** SCSS function only accept a `sring` value which is the name of the desired space.
@@ -16,4 +11,4 @@ The **get-space()** SCSS function only accept a `sring` value which is the name 
 
 ### Space scale
 
-<pattern path="src/pages/Foundations/Spaces/pattern/intro" nude="true"></pattern>
+[MOZAIC Margins and Paddings](http://mozaic.adeo.cloud/Foundations/Layout/MarginAndPaddings/)

@@ -1,14 +1,38 @@
 // const { nav, sidebar } = require("vuepress-bar")(`${__dirname}/..`);
 const path = require('path');
-const dirPath = path.join(process.cwd(), 'docs/pages/');
+const dirPath = path.join(process.cwd(), 'documentation/pages/');
 const sidebarMenu = require('./sidebarMenu');
 
 module.exports = {
     title: 'Core documentation',
-    description: 'Just playing around',
-    base: '/vuepress-test/',
+    description: 'CDP Documentation',
+    base: '/integration-web-core--socle/',
     head: [
-      ['link', { rel: 'icon', href: '/images/favicon.png' }]
+      ['link', { rel: 'icon', href: '/images/favicon.png' }],
+      ['script', {}, `
+        (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r
+          i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }
+          i[r].l = 1 * new Date()
+          a = s.createElement(o)
+          m = s.getElementsByTagName(o)[0]
+          a.async = 1
+          a.src = g
+          m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
+    
+        ga('create', 'A-173226665-1', 'auto')
+        ga('set', 'anonymizeIp', true)
+    
+        ga('send', 'pageview')
+      `],
+      ['script', {}, `
+        let commonJs = document.createElement('script');
+        commonJs.setAttribute('src', '/javascript/common.js');
+        document.head.appendChild(commonJs);
+      `]
     ],
     markdown: {
         lineNumbers: true,
@@ -25,10 +49,10 @@ module.exports = {
             { text: 'Documentation', link: '/pages/' },
             { text: 'Github', link: 'https://github.com/adeo/integration-web-core--socle' }
         ],
-        // displayAllHeaders: true,
         smoothScroll: true,
         sidebarDepth: 0,
         sidebar: sidebarMenu,
+        lastUpdated: 'Last Updated', // string | boolean
         plugins: [
             '@vuepress/active-header-links'
         ]

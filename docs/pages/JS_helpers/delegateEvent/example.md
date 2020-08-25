@@ -1,7 +1,26 @@
----
-title: 'Example'
-order: 3
----
+<template>
+<ShowHtml>
+<section>
+    <div class="parent">
+        <ul>
+            <li><button class="js-action">click here</button></li>
+            <li><button class="js-action">click here</button></li>
+            <li><button class="js-action">click here</button></li>
+            <li><button class="js-action">click here</button></li>
+            <li><button class="js-action">click here</button></li>
+        </ul>
+    </div>
+</section>
+</ShowHtml>
+</template>
 
-## Example
-<pattern path="src/pages/JS_helpers/delegateEvent/pattern/intro"></pattern>
+<script>
+export default {
+    mounted() {
+        document.querySelector('.parent').delegateEvent('click', 'button.js-action', event => {
+        console.log( event.target );
+        // Return "<button class="js-action">click here</button>"
+        });
+    }
+}
+</script>

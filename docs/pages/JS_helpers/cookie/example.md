@@ -1,7 +1,21 @@
----
-title: 'Example'
-order: 3
----
+<template>
+<ShowHtml>
+</ShowHtml>
+</template>
 
-## Example
-<pattern path="src/pages/JS_helpers/cookie/pattern/intro"></pattern>
+<script>
+export default {
+    mounted() {
+        lm.cookie.set('name', 'value', 'expireDays');
+        lm.cookie.get('name');
+        // return "value"
+
+        lm.cookie.get('doesNotExist');
+        // return ""
+
+        lm.cookie.delete('name');
+        lm.cookie.get('name');
+        // return ""
+    }
+}
+</script>

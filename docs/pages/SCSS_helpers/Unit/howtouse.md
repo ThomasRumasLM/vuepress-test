@@ -1,16 +1,11 @@
----
-title: 'How to use'
-order: 2
----
-
 ## How to use
 
 The **px-to-rem()** SCSS function only accept a `number` value which represent a pixel value.
 
 ```scss
-    .my-element {
-        max-height: px-to-rem(220); // Convert 220px to a rem value
-    }
+.my-element {
+    max-height: px-to-rem(220); // Convert 220px to a rem value
+}
 ```
 
 ### Good to know

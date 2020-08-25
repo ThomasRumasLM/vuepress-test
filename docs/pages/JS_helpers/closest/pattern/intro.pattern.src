@@ -1,8 +1,0 @@
-let c1 = document.querySelector('.js-closest-demo child1');
-let c2 = document.querySelector('.js-closest-demo child2');
-lm.getClosest(c1, '.parent');
-    // > return  <div class="parent">
-lm.getClosest(c1, 'section');
-    // > return  <section>
-lm.getClosest(c2, '.parent');
-    // > return false

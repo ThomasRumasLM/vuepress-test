@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="42px" height="42px">
+    <polygon points="3.7,15.8 21.3,15.8 12.5,9.2">
+    </polygon>
+    <style type="text/css">
+      polygon {
+        fill: none;
+        stroke-dasharray: 50;
+        stroke: #78be20;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        animation: dash 14s linear infinite;
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 1000;
+        }
+      }
+    </style>
+</svg>

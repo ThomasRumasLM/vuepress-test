@@ -4,23 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "doc:dev": "vuepress dev documentation",
+    "doc:menu": "node docs/tasks/sidebarMenu.js",
+    "doc:dashboard": "node docs/tasks/dashboard.js",
+    "doc:build": "npm run doc:menu && npm run doc:dashboard && vuepress build documentation",
+    "doc:build-light": "vuepress build documentation",
+    "doc:deploy": "npm run build && bash deploy.sh",
+    "doc:clean": "rm -rf docs/.cache docs/.vuepress/dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^1.5.0",
+    "@vuepress/plugin-active-header-links": "^1.5.4",
     "gh-pages": "^2.2.0",
     "integration-web-core--socle": "^2.11.1",
     "markdown-it-include": "^1.1.1",
     "node-sass": "^4.14.1",
     "raw-loader": "^4.0.1",
     "sass-loader": "^8.0.2",
-    "vuepress": "^1.5.0",
+    "vuepress": "^1.5.4",
     "vuepress-bar": "^0.3.1",
     "vuepress-plugin-element-tabs": "^0.2.8",
-    "vuepress-plugin-mermaidjs": "^1.5.1"
+    "vuepress-plugin-mermaidjs": "^1.7.2"
   }
 }

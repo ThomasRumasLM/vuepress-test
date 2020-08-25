@@ -1,9 +1,5 @@
----
-title: 'Specs'
-order: 2
----
-
 ## How
+
 **lm.forEach**
 ```javascript
 	/**
@@ -12,7 +8,9 @@ order: 2
 	 * @param  {function} 	fn 		The function i want to execute on each element
 	 */
 ```
+
 ### Parameters detail
+
 **array**  
 Its the iterable that will be looped
 
@@ -20,4 +18,5 @@ Its the iterable that will be looped
 The function that will be executed with each item
 
 ### Return value
+
 There is no return value

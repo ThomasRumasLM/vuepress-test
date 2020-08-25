@@ -1,9 +1,5 @@
----
-title: 'Specs'
-order: 2
----
-
 ## How
+
 **lm.fetch**
 ```javascript
 	/**
@@ -19,7 +15,9 @@ order: 2
 	 *  All others parameters are added as the query parameters
 	 */
 ```
+
 ### Parameters detail
+
 **method**  
 The method used for the call. Most frequently GET or POST  
 https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode
@@ -45,4 +43,5 @@ This methods is called after the success/error function has run
 The stream response from your request is passed in the `data` parameter, in the `fetchResult` parameter, you will have the status and headers of the request
 
 ### Return value
+
 There is no return value, you can handle the response with the different success/error/complete method

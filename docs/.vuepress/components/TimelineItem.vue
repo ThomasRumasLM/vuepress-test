@@ -13,13 +13,13 @@
 <script>
 export default {
   name: "TimelineItem",
-  props: ["type", "date", "title", "text", "linklabel", "linkhref"]
+  props: ["type", "date", "title", "text", "linklabel", "linkhref"],
 };
 </script>
 
 <style lang="scss"  scoped>
 $timeline-background: #eaf3e2; // body background color
-$timeline-light: #ffffff; // white
+$timeline-light: #fff; // white
 $timeline-dark: #303e49; // blue dark
 $timeline-yellow: #f0ca45; // yellow
 $timeline-green: #75ce66; // green
@@ -38,16 +38,19 @@ $timeline-red: #c03b44; // red
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px $timeline-light,
+    box-shadow:
+      0 0 0 4px $timeline-light,
       inset 0 2px 0 rgba($timeline-dark, 0.08),
       0 3px 0 4px rgba($timeline-dark, 0.05);
 
     &--success {
       background: $timeline-green;
     }
+
     &--warning {
       background: $timeline-yellow;
     }
+
     &--danger {
       background: $timeline-red;
     }
@@ -78,7 +81,7 @@ $timeline-red: #c03b44; // red
 
     &-legend {
       margin-top: 1rem;
-      margin-bottom: .25rem;
+      margin-bottom: 0.25rem;
       color: lighten($timeline-dark, 25%);
     }
 

@@ -1,7 +1,27 @@
----
-title: 'Example'
-order: 3
----
+<template>
+<ShowHtml>
+<div>
+    <div class="myLoaderContainer"></div>
+</div>
 
-## Example
-<pattern path="src/pages/JS_helpers/localstorage/pattern/intro"></pattern>
+</ShowHtml>
+</template>
+
+<script>
+export default {
+    mounted() {
+        lm.localStorageLM.set('key', 'value');
+        // > Set {key: value} to localStorage, for 1 day, in LMData object (default)
+        lm.localStorageLM.get('key');
+        // > return value
+            
+        lm.localStorageLM.set('key2', 'value', 3, 'sessionStorage', 'OtherData');
+        // > Set {key2: value} to sessionStorage, for 3 days, in OtherData object
+            
+        lm.localStorageLM.delete('key');
+        // > Delete {key: value} from localStorage, in LMData object (default)
+        lm.localStorageLM.delete('key2', 'sessionStorage', 'OtherData');
+        // > Delete {key2: value} from sessionStorage, in OtherData object
+    }
+}
+</script>
