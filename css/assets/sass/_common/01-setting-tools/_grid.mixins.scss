@@ -1,0 +1,174 @@
+@mixin set-default-grid ($inner) {
+  display: grid;
+  grid-auto-rows: minmax(auto, auto);
+  grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 1fr [col-2-end col-3-start] 1fr  [col-3-end col-4-start] 1fr  [col-4-end col-5-start] 1fr  [col-5-end col-6-start] 1fr  [col-6-end col-7-start] 1fr  [col-7-end col-8-start] 1fr  [col-8-end col-9-start] 1fr  [col-9-end col-10-start] 1fr  [col-10-end col-11-start] 1fr  [col-11-end col-12-start] 1fr [col-12-end];
+
+  @if ($inner) {
+    margin: 0;
+  }
+
+  @else {
+    margin: 0 auto;
+    padding: 0 #{$width-gutter-S}px;
+  }
+}
+
+@mixin set-from-m($inner) {
+  @if ($inner) {
+    max-width: $container-width-full;
+    grid-column-gap: #{$width-gutter-inner-M}px;
+  }
+
+  @else {
+    width: $container-width-full;
+    padding: 0 #{$width-gutter-M/2}px;
+    grid-column-gap: #{$width-gutter-M}px;
+  }
+}
+
+@mixin set-from-l($inner) {
+  @if ($inner) {
+    max-width: $container-width-l;
+    grid-column-gap: #{$width-gutter-inner-L}px;
+  }
+
+  @else {
+    width: $container-width-l;
+    padding: 0;
+    grid-column-gap: #{$width-gutter-L}px;
+  }
+}
+
+@mixin set-from-xl($inner) {
+  @if ($inner) {
+    max-width: $container-width-xl;
+    grid-column-gap: #{$width-gutter-inner-XL}px;
+  }
+
+  @else {
+    width: $container-width-xl;
+    padding: 0;
+    grid-column-gap: #{$width-gutter-XL}px;
+  }
+}
+
+@mixin set-from-xxl($inner) {
+  @if ($inner) {
+    max-width: $container-width-xxl;
+    grid-column-gap: #{$width-gutter-inner-XXL}px;
+  }
+
+  @else {
+    width: $container-width-xxl;
+    padding: 0;
+    grid-column-gap: #{$width-gutter-XXL}px;
+  }
+}
+
+@mixin set-grid-container ($from-breakpoint, $inner : false) {
+  @if ( not map-has-key($map: $screens, $key: $from-breakpoint)) {
+    @warn 'le breakpoint demandé dans le mixin set-grid-container n\'existe pas. Au choix : s, m, l, xl, xxl';
+  }
+
+  @if ($from-breakpoint == 's') {
+    @include set-default-grid($inner);
+
+    @if ($inner) {
+      max-width: $container-width-full;
+      grid-column-gap: #{$width-gutter-inner-S}px;
+    }
+
+    @else {
+      width: $container-width-full;
+      grid-column-gap: #{$width-gutter-S}px;
+    }
+
+    @include set-from-screen('m') {
+      @include set-from-m($inner);
+    }
+
+    @include set-from-screen('l') {
+      @include set-from-l($inner);
+    }
+
+    @include set-from-screen('xl') {
+      @include set-from-xl($inner);
+    }
+
+    @include set-from-screen('xxl') {
+      @include set-from-xxl($inner);
+    }
+  }
+
+  @if ($from-breakpoint == 'm') {
+    @include set-from-screen('m') {
+      @include set-default-grid($inner);
+      @include set-from-m($inner);
+    }
+
+    @include set-from-screen('l') {
+      @include set-from-l($inner);
+    }
+
+    @include set-from-screen('xl') {
+      @include set-from-xl($inner);
+    }
+
+    @include set-from-screen('xxl') {
+      @include set-from-xxl($inner);
+    }
+  }
+
+  @if ($from-breakpoint == 'l') {
+    @include set-from-screen('l') {
+      @include set-default-grid($inner);
+      @include set-from-l($inner);
+    }
+
+    @include set-from-screen('xl') {
+      @include set-from-xl($inner);
+    }
+
+    @include set-from-screen('xxl') {
+      @include set-from-xxl($inner);
+    }
+  }
+
+  @if ($from-breakpoint == 'xl') {
+    @include set-from-screen('xl') {
+      @include set-default-grid($inner);
+      @include set-from-xl($inner);
+    }
+
+    @include set-from-screen('xxl') {
+      @include set-from-xxl($inner);
+    }
+  }
+
+  @if ($from-breakpoint == 'xxl') {
+    @include set-from-screen('xxl') {
+      @include set-default-grid($inner);
+      @include set-from-xxl($inner);
+    }
+  }
+}
+
+@mixin generateColumns($breakpoint: '') {
+  $column: #{map-get($grid, prefix)}-#{$breakpoint};
+  $columnStart: #{map-get($grid, prefix)}#{map-get($grid, start)}-#{$breakpoint};
+
+  @if $breakpoint == '' {
+    $column: #{map-get($grid, prefix)};
+    $columnStart: #{map-get($grid, prefix)}#{map-get($grid, start)};
+  }
+
+  @for $i from 1 through 12 {
+    .#{$column}-#{$i} {
+      grid-column-end: span $i;
+    }
+
+    .#{$columnStart}-#{$i} {
+      grid-column-start: #{map-get($grid, prefix)}-#{$i}#{map-get($grid, start)};
+    }
+  }
+}

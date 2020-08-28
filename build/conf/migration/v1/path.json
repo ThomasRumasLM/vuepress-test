@@ -1,0 +1,33 @@
+{
+    "files": "./src/main/resources/**/*.*",
+    "ignore": [
+        "./**/*.png",
+        "./**/*.jpg",
+        "./**/*.gif",
+        "./**/*.eot",
+        "./**/*.woff",
+        "./**/macros/common/**/*.ftl",
+        "./**/icon-kit/*.*"
+    ],
+    "transform": [{
+            "type": "replacement",
+            "oldSyntax": "lmfr-int-socle-scss/",
+            "newSyntax": "integration-web-core--socle/css/"
+        },
+        {
+            "type": "warning",
+            "oldSyntax": "_titles.atoms",
+            "message": "Titles are included in common.css, manual import is not longer needed"
+        },
+        {
+            "type": "replacement",
+            "oldSyntax": "assets/sass/_common/05-atoms/_titles.atoms.scss",
+            "newSyntax": "assets/sass/_common/11-support/_titles.scss"
+        },
+        {
+            "type": "replacement",
+            "oldSyntax": "lmfr-int-socle-js/assets/",
+            "newSyntax": "integration-web-core--socle/js/assets/"
+        }
+    ]
+}

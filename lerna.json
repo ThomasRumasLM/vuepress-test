@@ -1,0 +1,21 @@
+{
+  "npmClient": "npm",
+  "packages": [
+    ".",
+    "build",
+    "css",
+    "freemarker",
+    "js"
+  ],
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "ignored-file",
+        "**/package-lock.json",
+        "**/.npmrc"
+      ],
+      "message": "chore(release): publish %s"
+    }
+  },
+  "version": "4.2.1"
+}

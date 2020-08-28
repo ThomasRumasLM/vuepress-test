@@ -1,0 +1,47 @@
+.km-tile-designation {
+  @include set-font-scale('04', 'm');
+
+  display: block;
+  height: 3.9rem;
+  overflow: hidden;
+
+  &--two-lines {
+    display: block;
+    height: 2.6rem;
+  }
+
+  @supports (-webkit-line-clamp: 2) {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    -webkit-line-clamp: 3;
+
+    &--two-lines {
+      display: flex;
+      height: auto;
+      -webkit-line-clamp: 2;
+    }
+  }
+
+  &__link {
+    @include set-font-scale('04', 'm');
+
+    text-decoration: none;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:not(.a-button):hover {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+}

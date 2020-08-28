@@ -1,0 +1,19 @@
+@import 'node_modules/@mozaic-ds/styles/generic/g.reset';
+
+/* override mozaic */
+button,
+a {
+  background-color: transparent;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+select {
+  -webkit-appearance: none;
+}
+
+html.is-scroll-locked {
+  overflow: hidden !important;
+}

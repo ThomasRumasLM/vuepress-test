@@ -1,0 +1,24 @@
+errorOnTest=false
+echo "Running pre-commit hook"
+npm run test
+if [ $? -ne 0 ]; then
+ echo "Unit tests must pass before commit!"
+ errorOnTest=true;
+fi
+
+npm run stylelint
+if [ $? -ne 0 ]; then
+ echo "Stylelint tests must pass before commit!"
+ errorOnTest=true;
+fi
+
+npm run eslint
+if [ $? -ne 0 ]; then
+ echo "Eslint tests must pass before commit!"
+ errorOnTest=true;
+fi
+
+if [ "$errorOnTest" = true ]; then
+ echo "\r\nAt least one test failed, tests must pass before commit!"
+ exit 1
+fi

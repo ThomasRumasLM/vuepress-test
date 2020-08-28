@@ -1,0 +1,205 @@
+$overlay: rgba($color-grey-900, 0.7);
+$isClass: map-get($layer, isClass);
+
+.#{map-get($layer, class)}#{map-get($layer, overlay)} {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  background-color: $overlay;
+  z-index: 298;
+  cursor: pointer;
+
+  &.#{map-get($isClass, showing)} {
+    animation: OverlayShow 400ms ease-in-out forwards;
+  }
+
+  &.#{map-get($isClass, hiding)} {
+    animation: OverlayHide 400ms ease-in-out forwards;
+  }
+
+  &.#{map-get($isClass, visible)} {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.#{map-get($layer, class)} {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1999999999; // To get the layer on top of Mopinion.
+  text-align: left;
+  background: $color-grey-000;
+  pointer-events: auto;
+  max-height: 100vh;
+  width: calc(100% * 10 / 12);
+  display: flex;
+  flex-direction: column;
+  padding-top: $mu075;
+
+  @include set-from-screen('m') {
+    width: calc(100% * 7 / 12);
+  }
+
+  @include set-from-screen('l') {
+    width: 448px;
+    padding-top: $mu100;
+  }
+
+  &.#{map-get($isClass, showing)} {
+    animation: LayerShow 400ms ease-in-out forwards;
+  }
+
+  &.#{map-get($isClass, hiding)} {
+    animation: LayerHide 400ms ease-in-out forwards;
+  }
+
+  &.#{map-get($isClass, hidden)} {
+    display: none;
+  }
+
+  &#{map-get($layer, header)} {
+    display: flex;
+    align-items: center;
+    padding: 0 $mu125 $mu050;
+
+    @include set-from-screen('l') {
+      padding: 0 $mu200 $mu075;
+    }
+  }
+
+  &#{map-get($layer, titleIcon)} {
+    padding-right: $mu050;
+  }
+
+  &#{map-get($layer, icon)} {
+    fill: $color-grey-600;
+  }
+
+  &#{map-get($layer, title)} {
+    @include set-font-scale('04', 'm');
+
+    color: $color-grey-600;
+  }
+
+  &#{map-get($layer, closeButton)} {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  &#{map-get($layer, closeIcon)} {
+    fill: $color-grey-500;
+  }
+
+  &#{map-get($layer, body)} {
+    overflow: hidden;
+    flex-shrink: 3;
+    padding-right: $mu025;
+    position: relative;
+
+    &.#{map-get($isClass, focusable)} {
+      border-bottom: get-border(s) solid $color-grey-200;
+
+      &::after {
+        content: '';
+        background-image: linear-gradient(to top, rgba($color-grey-999, 0.2), rgba($color-grey-999, 0));
+        position: absolute;
+        height: 30px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &#{map-get($layer, layout)} {
+    padding: $mu075 $mu075 $mu100 $mu100;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: $color-primary-01-500 $color-grey-100;
+    scrollbar-width: thin;
+    height: 100%;
+
+    @include set-from-screen('l') {
+      padding: $mu125 $mu175 $mu125 $mu200;
+    }
+
+    &::-webkit-scrollbar {
+      background-color: $color-grey-100;
+      width: $mu025;
+
+      &#{map-get($layer, thumb)} {
+        background: $color-primary-01-500;
+      }
+    }
+  }
+
+  &#{map-get($layer, footer)} {
+    padding: $mu100;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+
+    @include set-from-screen('l') {
+      padding: $mu100 $mu200;
+      flex-direction: row;
+    }
+  }
+
+  &#{map-get($layer, secondButton)} {
+    margin-top: $mu075;
+
+    @include set-from-screen('l') {
+      margin-top: 0;
+      margin-left: $mu100;
+    }
+  }
+}
+
+@keyframes LayerShow {
+  from {
+    transform: translate(100%, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes LayerHide {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(100%, 0);
+  }
+}
+
+@keyframes OverlayShow {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes OverlayHide {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

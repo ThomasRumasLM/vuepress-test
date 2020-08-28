@@ -1,0 +1,37 @@
+.kl-visual-filter {
+  padding: 0 $mu100 0 0;
+
+  @include set-from-screen('l') {
+    padding: 0;
+    margin-top: $mu075;
+  }
+
+  &__label {
+    @include set-font-scale('04', 'm');
+
+    flex: 1;
+    margin-left: 0;
+    text-align: left;
+    color: $grey-700;
+    font-weight: get-font-weight();
+
+    @include set-from-screen('l') {
+      @include set-font-scale('05', 'm');
+    }
+
+    &.checked {
+      color: $black;
+      font-weight: get-font-weight('bold');
+    }
+  }
+
+  &__label-quantity {
+    @include set-font-scale('04', 'm');
+
+    color: $grey-500;
+
+    @include set-from-screen('l') {
+      @include set-font-scale('04', 'm');
+    }
+  }
+}

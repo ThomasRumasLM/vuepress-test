@@ -1,0 +1,689 @@
+{
+    "files": "./src/main/resources/**/*.*",
+    "ignore": [
+        "./**/*.png",
+        "./**/*.jpg",
+        "./**/*.gif",
+        "./**/*.eot",
+        "./**/*.woff",
+        "./**/macros/common/**/*.ftl",
+        "./**/icon-kit/*.*"
+    ],
+    "transform": [
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacing3XS",
+            "newSyntax" : "$mu0125"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacing2XS",
+            "newSyntax" : "$mu025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacingXS",
+            "newSyntax" : "$mu050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacingS",
+            "newSyntax" : "$mu075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacingM",
+            "newSyntax" : "$mu100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacingL",
+            "newSyntax" : "$mu150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacingXL",
+            "newSyntax" : "$mu200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacing2XL",
+            "newSyntax" : "$mu250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacing3XL",
+            "newSyntax" : "$mu300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacing4XL",
+            "newSyntax" : "$mu400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacing5XL",
+            "newSyntax" : "$mu600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$spacing6XL",
+            "newSyntax" : "$mu1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--2XS",
+            "newSyntax" : "mu-m-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--2XS",
+            "newSyntax" : "mu-mt-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--2XS",
+            "newSyntax" : "mu-mb-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--2XS",
+            "newSyntax" : "mu-ml-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--2XS",
+            "newSyntax" : "mu-mr-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--XS",
+            "newSyntax" : "mu-m-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--XS",
+            "newSyntax" : "mu-mt-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--XS",
+            "newSyntax" : "mu-mb-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--XS",
+            "newSyntax" : "mu-ml-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--XS",
+            "newSyntax" : "mu-mr-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--S",
+            "newSyntax" : "mu-m-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--S",
+            "newSyntax" : "mu-mt-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--S",
+            "newSyntax" : "mu-mb-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--S",
+            "newSyntax" : "mu-ml-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--S",
+            "newSyntax" : "mu-mr-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--M",
+            "newSyntax" : "mu-m-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--M",
+            "newSyntax" : "mu-mt-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--M",
+            "newSyntax" : "mu-mb-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--M",
+            "newSyntax" : "mu-ml-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--M",
+            "newSyntax" : "mu-mr-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--L",
+            "newSyntax" : "mu-m-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--L",
+            "newSyntax" : "mu-mt-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--L",
+            "newSyntax" : "mu-mb-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--L",
+            "newSyntax" : "mu-ml-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--L",
+            "newSyntax" : "mu-mr-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--XL",
+            "newSyntax" : "mu-m-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--XL",
+            "newSyntax" : "mu-mt-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--XL",
+            "newSyntax" : "mu-mb-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--XL",
+            "newSyntax" : "mu-ml-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--XL",
+            "newSyntax" : "mu-mr-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--2XL",
+            "newSyntax" : "mu-m-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--2XL",
+            "newSyntax" : "mu-mt-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--2XL",
+            "newSyntax" : "mu-mb-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--2XL",
+            "newSyntax" : "mu-ml-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--2XL",
+            "newSyntax" : "mu-mr-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--3XL",
+            "newSyntax" : "mu-m-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--3XL",
+            "newSyntax" : "mu-mt-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--3XL",
+            "newSyntax" : "mu-mb-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--3XL",
+            "newSyntax" : "mu-ml-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--3XL",
+            "newSyntax" : "mu-mr-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--4XL",
+            "newSyntax" : "mu-m-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--4XL",
+            "newSyntax" : "mu-mt-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--4XL",
+            "newSyntax" : "mu-mb-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--4XL",
+            "newSyntax" : "mu-ml-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--4XL",
+            "newSyntax" : "mu-mr-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--5XL",
+            "newSyntax" : "mu-m-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--5XL",
+            "newSyntax" : "mu-mt-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--5XL",
+            "newSyntax" : "mu-mb-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--5XL",
+            "newSyntax" : "mu-ml-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--5XL",
+            "newSyntax" : "mu-mr-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin--6XL",
+            "newSyntax" : "mu-m-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-top--6XL",
+            "newSyntax" : "mu-mt-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-bottom--6XL",
+            "newSyntax" : "mu-mb-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-left--6XL",
+            "newSyntax" : "mu-ml-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-margin-right--6XL",
+            "newSyntax" : "mu-mr-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--2XS",
+            "newSyntax" : "mu-p-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--2XS",
+            "newSyntax" : "mu-pt-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--2XS",
+            "newSyntax" : "mu-pb-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--2XS",
+            "newSyntax" : "mu-pl-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--2XS",
+            "newSyntax" : "mu-pr-025"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--XS",
+            "newSyntax" : "mu-p-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--XS",
+            "newSyntax" : "mu-pt-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--XS",
+            "newSyntax" : "mu-pb-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--XS",
+            "newSyntax" : "mu-pl-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--XS",
+            "newSyntax" : "mu-pr-050"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--S",
+            "newSyntax" : "mu-p-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--S",
+            "newSyntax" : "mu-pt-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--S",
+            "newSyntax" : "mu-pb-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--S",
+            "newSyntax" : "mu-pl-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--S",
+            "newSyntax" : "mu-pr-075"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--M",
+            "newSyntax" : "mu-p-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--M",
+            "newSyntax" : "mu-pt-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--M",
+            "newSyntax" : "mu-pb-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--M",
+            "newSyntax" : "mu-pl-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--M",
+            "newSyntax" : "mu-pr-100"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--L",
+            "newSyntax" : "mu-p-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--L",
+            "newSyntax" : "mu-pt-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--L",
+            "newSyntax" : "mu-pb-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--L",
+            "newSyntax" : "mu-pl-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--L",
+            "newSyntax" : "mu-pr-150"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--XL",
+            "newSyntax" : "mu-p-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--XL",
+            "newSyntax" : "mu-pt-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--XL",
+            "newSyntax" : "mu-pb-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--XL",
+            "newSyntax" : "mu-pl-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--XL",
+            "newSyntax" : "mu-pr-200"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--2XL",
+            "newSyntax" : "mu-p-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--2XL",
+            "newSyntax" : "mu-pt-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--2XL",
+            "newSyntax" : "mu-pb-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--2XL",
+            "newSyntax" : "mu-pl-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--2XL",
+            "newSyntax" : "mu-pr-250"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--3XL",
+            "newSyntax" : "mu-p-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--3XL",
+            "newSyntax" : "mu-pt-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--3XL",
+            "newSyntax" : "mu-pb-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--3XL",
+            "newSyntax" : "mu-pl-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--3XL",
+            "newSyntax" : "mu-pr-300"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--4XL",
+            "newSyntax" : "mu-p-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--4XL",
+            "newSyntax" : "mu-pt-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--4XL",
+            "newSyntax" : "mu-pb-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--4XL",
+            "newSyntax" : "mu-pl-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--4XL",
+            "newSyntax" : "mu-pr-400"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--5XL",
+            "newSyntax" : "mu-p-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--5XL",
+            "newSyntax" : "mu-pt-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--5XL",
+            "newSyntax" : "mu-pb-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--5XL",
+            "newSyntax" : "mu-pl-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--5XL",
+            "newSyntax" : "mu-pr-600"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding--6XL",
+            "newSyntax" : "mu-p-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-top--6XL",
+            "newSyntax" : "mu-pt-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-bottom--6XL",
+            "newSyntax" : "mu-pb-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-left--6XL",
+            "newSyntax" : "mu-pl-1000"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "ku-padding-right--6XL",
+            "newSyntax" : "mu-pr-1000"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)3XS(\\s*)\\)",
+            "newSyntax" : "$mu0125"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)2XS(\\s*)\\)",
+            "newSyntax" : "$mu025"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)XS(\\s*)\\)",
+            "newSyntax" : "$mu050"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)S(\\s*)\\)",
+            "newSyntax" : "$mu075"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)M(\\s*)\\)",
+            "newSyntax" : "$mu100"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)L(\\s*)\\)",
+            "newSyntax" : "$mu150"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)XL(\\s*)\\)",
+            "newSyntax" : "$mu200"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)2XL(\\s*)\\)",
+            "newSyntax" : "$mu250"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)3XL(\\s*)\\)",
+            "newSyntax" : "$mu300"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)4XL(\\s*)\\)",
+            "newSyntax" : "$mu400"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)5XL(\\s*)\\)",
+            "newSyntax" : "$mu600"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "get-space\\((\\s*)6XL(\\s*)\\)",
+            "newSyntax" : "$mu1000"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "#{\\$mu(\\d*)}px",
+            "newSyntax" : "#{$mu$1}"
+        }
+    ]
+} 

@@ -1,0 +1,39 @@
+.km-breakzone {
+  &__link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__wrap-image {
+    position: relative;
+    height: 15rem;
+    overflow: hidden;
+    margin-bottom: $mu075;
+
+    @include set-from-screen('m') {
+      height: 20rem;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__designation {
+    @include set-font-scale('05', 'm');
+
+    font-weight: get-font-weight('bold');
+    margin-bottom: $mu025;
+  }
+
+  &__cta {
+    @include set-font-scale('04', 'm');
+
+    text-decoration: underline;
+  }
+}

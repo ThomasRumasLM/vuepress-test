@@ -1,0 +1,128 @@
+.kl-swiper {
+  overflow-x: scroll;
+  margin: 0 $mu075;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+
+  @include set-from-screen('l') {
+    margin: 0 $mu400;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+
+  &__controls {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    transition: all 400ms ease-in-out;
+
+    @include set-from-screen('l') {
+      height: auto;
+      overflow: visible;
+    }
+
+    &--hidden {
+      display: none;
+    }
+
+    .ka-nav-button {
+      position: absolute;
+      padding: $mu050;
+      opacity: 0.7;
+      box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+      font-size: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &--hidden {
+        display: none;
+      }
+
+      svg {
+        fill: $color-grey-700;
+        pointer-events: none;
+      }
+
+      &:first-child {
+        left: $mu050;
+      }
+
+      &:last-child {
+        right: $mu050;
+      }
+    }
+
+    @media (hover) {
+      opacity: 1;
+      width: 100%;
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      opacity: 1;
+      width: 100%;
+    }
+  }
+
+  &__override-grid {
+    min-width: $container-width-l;
+    max-width: $container-width-xxl;
+    padding: 0;
+  }
+
+  &__slider-container {
+    position: relative;
+  }
+
+  &__slider {
+    white-space: nowrap;
+    display: flex;
+
+    &--center {
+      justify-content: center;
+    }
+  }
+
+  &__slider-item {
+    display: inline-block;
+  }
+}
+
+@mixin getValue($nbItems, $gutter) {
+  min-width: calc((100% / #{$nbItems} - #{$gutter} * 1px) + (#{$gutter} * 1px / #{$nbItems}));
+  max-width: calc((100% / #{$nbItems} - #{$gutter} * 1px) + (#{$gutter} * 1px / #{$nbItems}));
+
+  &:not(:last-child) {
+    margin-right: #{$gutter}px;
+  }
+}
+
+@mixin generateSwiperItems($map) {
+  @each $breakpoint, $value in $map {
+    @include set-from-screen($breakpoint) {
+      @include getValue($value...);
+    }
+  }
+}
+
+/* HTML Layoyt/swiper
+<div class="kl-swiper kl-container">
+    <div class="col-container kl-swiper__override-grid">
+        <div class="col-2">
+            Ma colonne de grid
+        </div>
+    </div>
+</div>
+*/

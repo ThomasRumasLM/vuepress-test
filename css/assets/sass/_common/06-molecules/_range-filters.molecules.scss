@@ -1,0 +1,71 @@
+.km-range-filter {
+  background-color: $white;
+  padding: 0 $mu100 0 $mu200;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  @include set-from-screen('xl') {
+    padding: 0 $mu100 0 0;
+  }
+
+  &__element {
+    position: relative;
+    text-align: right;
+    order: 0;
+    flex: 0 1 42%;
+    align-self: center;
+  }
+
+  &__input {
+    text-align: right;
+    padding-right: $mu150;
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &__unit {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: $mu050;
+    color: $grey-400;
+  }
+
+
+  &__button {
+    margin: $mu150 0 $mu100 0;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: center;
+  }
+
+  &__reset {
+    @include resetButton;
+    @include set-font-scale('04', 'm');
+
+    cursor: pointer;
+    display: block;
+    color: $black;
+    text-decoration: underline;
+    margin-top: $mu150;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: center;
+
+    &:hover {
+      color: $primary-01-500;
+    }
+
+    span {
+      pointer-events: none;
+    }
+  }
+}

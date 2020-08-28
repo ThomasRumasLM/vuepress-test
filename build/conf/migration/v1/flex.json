@@ -1,0 +1,19 @@
+{
+	"files": "./src/main/resources/**/*.*",
+	"ignore": [
+		"./**/*.png",
+		"./**/*.jpg",
+		"./**/*.gif",
+		"./**/*.eot",
+		"./**/*.woff",
+		"./**/macros/common/**/*.ftl",
+		"./**/icon-kit/*.*"
+	],
+	"transform": [
+        {
+            "type" : "warning",
+            "oldSyntax" : "@include flex",
+            "message" : "flex and flex-item mixin is no longer available, you can refactor each instance manually using the native CSS flex property"
+        }
+	]
+} 

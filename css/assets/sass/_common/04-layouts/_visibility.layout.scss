@@ -1,0 +1,24 @@
+.kl-hidden {
+  display: none;
+
+  @include modify-from-screens(('m', 'l', 'xl', 'xxl')) {
+    display: none;
+  }
+}
+
+.kl-hidden-accessibility {
+  @include set-hidden-accessibility;
+
+  @include modify-from-screens(('m', 'l', 'xl', 'xxl')) {
+    @include set-hidden-accessibility;
+  }
+}
+
+.kl-visible {
+  display: block;
+
+  @include modify-from-screens(('m', 'l', 'xl', 'xxl')) {
+    display: block;
+  }
+}
+

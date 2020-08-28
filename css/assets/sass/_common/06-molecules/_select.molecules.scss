@@ -1,0 +1,57 @@
+@import 'node_modules/@mozaic-ds/styles/components/c.select';
+
+.mc-select {
+  -webkit-appearance: none;
+}
+
+.km-select-wrapper {
+  @include inputCommunStyle;
+
+  padding: 1px;
+
+  &:hover {
+    @include inputHoverStyle;
+  }
+
+  &.is-focus {
+    @include inputFocusStyle;
+  }
+
+  &.is-valid {
+    @include inputValidStyle;
+  }
+
+  &.is-invalid {
+    @include inputInvalidStyle;
+  }
+
+  &.is-disabled {
+    @include inputDisabledStyle;
+  }
+
+  &__input {
+    @include resetSelect;
+  }
+
+  &__ico {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all ease 150ms;
+    right: $mu100;
+    pointer-events: none;
+    z-index: 2;
+
+    .is-focus & {
+      @include icoFocusStyle;
+    }
+
+    .is-disabled & {
+      @include icoDisabledStyle;
+    }
+
+    .is-open ~ & {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+}

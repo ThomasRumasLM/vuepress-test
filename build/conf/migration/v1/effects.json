@@ -1,0 +1,85 @@
+{
+    "files": "./src/main/resources/**/*.*",
+    "ignore": [
+        "./**/*.png",
+        "./**/*.jpg",
+        "./**/*.gif",
+        "./**/*.eot",
+        "./**/*.woff",
+        "./**/macros/common/**/*.ftl",
+        "./**/icon-kit/*.*"
+    ],
+    "transform": [
+        
+        {
+            "type" : "regex",
+            "oldSyntax" : "@include([ ]*)textShadow\\((\\s)*\\)( *);?",
+            "newSyntax" : "text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);"
+        },
+        {
+            "type" : "regex",
+            "oldSyntax" : "@include([ ]*)textShadow\\(([\\\"']{0,1})([a-zA-Z0-9 \\(\\),\\-\\+\\*#\\.\\$\\_]*)([\\\"']{0,1})\\)( *);?",
+            "newSyntax" : "text-shadow: $3;"
+        },
+        {
+            "type" : "warning",
+            "oldSyntax" : "@include textShadow",
+            "message" : "The textShadow mixin is no longer available, you have to refactor each instance manually using the CSS native property."
+        },
+
+        {
+            "type": "regex",
+            "oldSyntax": "@include([ ]*)boxShadow\\(([\"']{0,1})([a-zA-Z0-9 \\(\\),\\-\\+\\*#\\.\\$\\_]*)([\"']{0,1})\\)( *);?",
+            "newSyntax":"box-shadow: $3;"
+        },
+        {
+            "type" : "warning",
+            "oldSyntax" : "@include boxShadow",
+            "message" : "The boxShadow mixin is no longer available, you have to refactor each instance manually using the Mozaic variable available here : http://mozaic.adeo.cloud/Foundations/Shadows/"
+        },
+
+        {
+            "type": "regex",
+            "oldSyntax": "@include([ ]*)dropShadow\\((\\s)*\\)( *);?",
+            "newSyntax":"box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .25);"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "@include([ ]*)dropShadow\\(([^\\\"',\\$\\)]+)(,?)([^\\\"',\\$\\)]*)?(,?)([^\\\"',\\$\\)]*)?(,?)([^\\\"',\\$\\)]*)?(,?)([^\\\"',\\$\\)]*)?\\)( *);?",
+            "newSyntax":"box-shadow: $2 $4 $6 $8 $10;"
+        },
+        {
+            "type" : "warning",
+            "oldSyntax" : "@include dropShadow",
+            "message" : "The dropShadow mixin is no longer available, you have to refactor each instance manually using the CSS native property."
+        },
+
+        {
+            "type": "regex",
+            "oldSyntax": "@include([ ]*)innerShadow\\((\\s)*\\)( *);?",
+            "newSyntax":"box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .25);"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "@include([ ]*)innerShadow\\(([^\\\"',\\$\\)]+)(,?)([^\\\"',\\$\\)]*)?(,?)([^\\\"',\\$\\)]*)?(,?)([^\\\"',\\$\\)]*)?(,?)([^\\\"',\\$\\)]*)?\\)( *);?",
+            "newSyntax":"box-shadow: inset $2 $4 $6 $8 $10;"
+        },
+        {
+            "type" : "warning",
+            "oldSyntax" : "@include innerShadow",
+            "message" : "The innerShadow mixin is no longer available, you have to refactor each instance manually using the CSS native property."
+        },
+
+
+        {
+            "type": "regex",
+            "oldSyntax": "@include([ ]*)filterBlur\\((\\s*)([^ \\)]*)(\\s*)\\);?",
+            "newSyntax":"filter: blur($3px);"
+        },
+        {
+            "type" : "warning",
+            "oldSyntax" : "@include filterBlur",
+            "message" : "The filterBlur mixin is no longer available, you have to refactor each instance manually using the CSS native property."
+        }
+    ]
+} 

@@ -1,0 +1,98 @@
+{
+    "files": "./src/main/resources/**/*.*",
+    "ignore": [
+        "./**/*.png",
+        "./**/*.jpg",
+        "./**/*.gif",
+        "./**/*.eot",
+        "./**/*.woff",
+        "./**/macros/common/**/*.ftl",
+        "./**/icon-kit/*.*"
+    ],
+    "transform": [{
+            "type": "replacement",
+            "oldSyntax": "ku-fs-s",
+            "newSyntax": "mt-body-s"
+        },
+        {
+            "type": "replacement",
+            "oldSyntax": "ku-fs-m",
+            "newSyntax": "mt-body-m"
+        },
+        {
+            "type": "replacement",
+            "oldSyntax": "ku-fs-l",
+            "newSyntax": "mt-body-l"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "(?=(line-height))(?!(.*[{]))(.*)line-height(.*)([^{}]*)(get-font-size)\\((.*)\\)(.*)",
+            "newSyntax": "$5$6($7);\nline-height$4"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-weight([\\s:]*)light([\\s\\(\\)]*);",
+            "newSyntax": "font-weight: get-font-weight('light');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-weight([\\s:]*)regular([\\s\\(\\)]*);",
+            "newSyntax": "font-weight: get-font-weight();"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-weight([\\s:]*)bold([\\s\\(\\)]*);",
+            "newSyntax": "font-weight: get-font-weight('bold');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)title([\"']?)([\\s,]*)([\"']?)xs([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('07', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)title([\"']?)([\\s,]*)([\"']?)s([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('08', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)title([\"']?)([\\s,]*)([\"']?)m([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('08', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)title([\"']?)([\\s,]*)([\"']?)l([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('09', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)title([\"']?)([\\s,]*)([\"']?)xl([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('09', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)title([\"']?)([\\s,]*)([\"']?)xxl([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('10', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)text([\"']?)([\\s,]*)([\"']?)xs([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('02', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)text([\"']?)([\\s,]*)([\\s,]*)([\"']?)s([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('04', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)text([\"']?)([\\s,]*)([\\s,]*)([\"']?)m([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('05', 'm');"
+        },
+        {
+            "type": "regex",
+            "oldSyntax": "font-size([\\s:]*)get-font-size\\((\\s*)([\"']?)text([\"']?)([\\s,]*)([\\s,]*)([\"']?)l([\"']?)(\\s*)\\)( *);?",
+            "newSyntax": "@include set-font-scale('06', 'm');"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+$mainprice: map-get($priceCdp, price);
+
+.#{map-get($mainprice, class)}#{map-get($mainprice, withoutoffer)} {
+  @include set-font-scale('04', 'm');
+
+  display: inline-block;
+  vertical-align: middle;
+  color: $black;
+  text-decoration: line-through;
+}

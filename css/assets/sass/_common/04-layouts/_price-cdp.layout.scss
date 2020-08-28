@@ -1,0 +1,55 @@
+$mainprice: map-get($priceCdp, price);
+$modifiers: map-get($priceCdp, modifiers);
+$flagsPrice: map-get($priceCdp, flagsPrice);
+
+.#{map-get($priceCdp, class)} {
+  &#{map-get($modifiers, light)} {
+    .#{map-get($mainprice, mainClass)} {
+      @include set-font-scale('07', 'm');
+
+      font-weight: get-font-weight('bold');
+
+      &#{map-get($mainprice, unit)} {
+        @include set-font-scale('04', 'm');
+      }
+    }
+
+    .#{map-get($mainprice, class)} {
+      &#{map-get($flagsPrice, flagPrice)} {
+
+        &#{map-get($modifiers, firstprice)},
+        &#{map-get($modifiers, highquality)},
+        &#{map-get($modifiers, bestvalue)} {
+          padding: $mu025;
+          line-height: 0.75rem;
+        }
+
+        &#{map-get($modifiers, discount)} {
+          @include set-font-scale('02', 'm');
+
+          line-height: 0.75rem;
+        }
+
+        &#{map-get($modifiers, clearance)} {
+
+          &#{map-get($flagsPrice, label)},
+          &#{map-get($flagsPrice, amount)} {
+            @include set-font-scale('02', 'm');
+
+            line-height: 0.75rem;
+          }
+
+          &#{map-get($flagsPrice, label)} {
+            padding: calc(#{$mu025} - 1px) $mu025;
+          }
+        }
+      }
+    }
+  }
+
+  &#{map-get($modifiers, discount)} {
+    .#{map-get($mainprice, mainClass)} {
+      color: $secondary-red-500;
+    }
+  }
+}

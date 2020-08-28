@@ -1,0 +1,35 @@
+/* Cols container
+----------------------------------------------------------------------------- */
+.#{map-get($grid, prefix)}#{map-get($grid, container)}#{map-get($grid, inner)} {
+  @include set-grid-container($from-breakpoint: 's', $inner:true);
+}
+
+.#{map-get($grid, prefix)}#{map-get($grid, container)} {
+  @include set-grid-container($from-breakpoint: 's');
+}
+
+
+/* Largeur de chaque élément en nombre de colonne
+----------------------------------------------------------------------------- */
+
+/* Colonne de début d'un élément
+----------------------------------------------------------------------------- */
+@for $i from 1 through 12 {
+  .#{map-get($grid, prefix)}-#{$i} { grid-column-end: span $i; }
+  .#{map-get($grid, prefix)}#{map-get($grid, start)}-#{$i} { grid-column#{map-get($grid, start)}: #{map-get($grid, prefix)}-#{$i}#{map-get($grid, start)}; }
+}
+
+@each $size in map-get($grid, sizes) {
+  @if $size == 's' {
+    @media #{$lt-m} {
+      @include generateColumns($size);
+    }
+  }
+
+  @else {
+    @include set-from-screen($size) {
+      @include generateColumns($size);
+      .#{map-get($grid, prefix)}#{map-get($grid, start)}-#{$size}-auto { grid-column-start: inherit; }
+    }
+  }
+}

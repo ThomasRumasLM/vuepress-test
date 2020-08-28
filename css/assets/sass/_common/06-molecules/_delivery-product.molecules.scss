@@ -1,0 +1,44 @@
+.km-delivery-product {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $mu025;
+  }
+
+  &__type {
+    @include set-font-scale('05', 'm');
+
+    font-weight: get-font-weight('bold');
+    color: $primary-01-500;
+
+    @include set-from-screen('l') {
+      @include set-font-scale('04', 'm');
+    }
+  }
+
+  &__place {
+    @include set-font-scale('04', 'm');
+
+    color: $grey-700;
+    display: block;
+
+    @include set-from-screen('l') {
+      @include set-font-scale('02', 'm');
+
+      display: inline;
+    }
+  }
+
+  &__store-link {
+    @include set-font-scale('02', 'm');
+  }
+
+  &__price {
+    @include set-font-scale('02', 'm');
+
+    font-weight: get-font-weight('bold');
+    color: $grey-900;
+    text-transform: uppercase;
+  }
+}

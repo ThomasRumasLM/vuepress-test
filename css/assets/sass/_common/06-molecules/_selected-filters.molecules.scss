@@ -1,0 +1,22 @@
+.km-selected-filters {
+  margin-bottom: $mu150;
+
+  &__title {
+    @include set-font-scale('04', 'm');
+
+    font-weight: get-font-weight('bold');
+    margin-bottom: $mu050;
+  }
+
+  &__elements {
+    display: inline-flex;
+    margin: 0 $mu075 $mu100 0;
+  }
+
+  &__reset {
+    display: inline-flex;
+    margin-left: $mu025;
+  }
+}
+
+

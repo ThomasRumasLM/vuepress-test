@@ -1,0 +1,56 @@
+@import 'node_modules/@mozaic-ds/styles/settings-tools/s.notification';
+@import 'node_modules/@mozaic-ds/styles/settings-tools/t.flexy';
+@import 'node_modules/@mozaic-ds/styles/components/c.notification';
+
+/* LTS during 3 months */
+.ka-toaster {
+  display: flex;
+  padding: $mu100;
+  border: get-border(s) solid transparent;
+  border-radius: get-border-radius(m);
+
+  &__icon {
+    margin-right: $mu100;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    word-break: break-word;
+  }
+
+  &--success {
+    background: $primary-01-100;
+    border-color: $primary-01-500;
+
+    .ka-toaster__icon {
+      fill: $primary-01-500;
+    }
+  }
+
+  &--info {
+    background: $secondary-blue-100;
+    border-color: $secondary-blue-500;
+
+    .ka-toaster__icon {
+      fill: $secondary-blue-500;
+    }
+  }
+
+  &--warning {
+    background: $secondary-orange-100;
+    border-color: $secondary-orange-500;
+
+    .ka-toaster__icon {
+      fill: $secondary-orange-500;
+    }
+  }
+
+  &--danger {
+    background: $secondary-red-100;
+    border-color: $secondary-red-500;
+
+    .ka-toaster__icon {
+      fill: $secondary-red-500;
+    }
+  }
+}

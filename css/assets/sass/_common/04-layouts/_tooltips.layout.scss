@@ -1,0 +1,311 @@
+$positions: map-get($tooltip, positions);
+$isClass: map-get($tooltip, isClass);
+
+.#{map-get($tooltip, class)} {
+  position: relative;
+  display: inline-block;
+
+  &#{map-get($tooltip, container)} {
+    position: relative;
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      position: initial;
+    }
+
+    @include set-from-screen('m') {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  &#{map-get($tooltip, pointer)} {
+    position: relative;
+    transition: all 0.4s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 1.6rem;
+      left: -0.5rem;
+      border-right: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-bottom: 8px solid $grey-800;
+      display: none;
+    }
+  }
+
+  &#{map-get($tooltip, button)} {
+    @include set-font-scale('04', 'm');
+
+    background: transparent;
+    margin: 0 0 0 $mu025;
+    fill: $grey-300;
+    cursor: pointer;
+
+    &--#{nth($positions, 2)} {
+      margin: 0 $mu025 0 0;
+    }
+  }
+
+  &#{map-get($tooltip, close)} {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    fill: $white;
+    background: none;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    display: none;
+  }
+
+  &#{map-get($tooltip, wrapper)} {
+    position: absolute;
+    top: 2rem;
+    background: $grey-800;
+    padding: $mu150;
+    min-width: 320px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: get-border-radius('m');
+    z-index: 297;
+    transition: all 0.4s;
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      top: inherit;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: -0.5rem;
+      right: 2.5rem;
+      display: none;
+    }
+
+    &--#{nth($positions, 1)} {
+      transform-origin: left center;
+
+      @include set-from-screen('m') {
+        left: 120%;
+        margin-left: inherit;
+        min-width: 320px;
+        top: inherit;
+      }
+
+      &::before {
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-bottom: 8px solid $grey-800;
+
+        @include set-from-screen('m') {
+          transform: translateY(-50%);
+          top: 50%;
+          left: -0.5rem;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          border-right: 8px solid $grey-800;
+          border-left: none;
+          display: block;
+        }
+      }
+    }
+
+    &--#{nth($positions, 3)} {
+      transform-origin: 85% 100%;
+
+      @include set-from-screen('m') {
+        bottom: 2.2rem;
+        left: -16rem;
+        margin-left: inherit;
+        top: inherit;
+      }
+
+      &::before {
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-bottom: 8px solid $grey-800;
+
+        @include set-from-screen('m') {
+          top: inherit;
+          bottom: -0.5rem;
+          right: 2.5rem;
+          border-right: 8px solid transparent;
+          border-left: 8px solid transparent;
+          border-top: 8px solid $grey-800;
+          border-bottom: none;
+          display: block;
+        }
+      }
+    }
+
+    &--#{nth($positions, 4)} {
+      transform-origin: 85% 0;
+
+      @include set-from-screen('m') {
+        top: 2.2rem;
+        left: -16rem;
+        margin-left: inherit;
+      }
+
+      &::before {
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-bottom: 8px solid $grey-800;
+
+        @include set-from-screen('m') {
+          top: -0.5rem;
+          right: 2.5rem;
+          border-right: 8px solid transparent;
+          border-left: 8px solid transparent;
+          border-bottom: 8px solid $grey-800;
+          border-top: none;
+          display: block;
+        }
+      }
+    }
+
+    &--#{nth($positions, 2)} {
+      transform-origin: right center;
+
+      @include set-from-screen('m') {
+        right: 37px;
+        margin-left: inherit;
+        min-width: 320px;
+        top: inherit;
+        left: auto;
+      }
+
+      &::before {
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-bottom: 8px solid $grey-800;
+
+        @include set-from-screen('m') {
+          transform: translateY(-50%);
+          top: 50%;
+          right: -0.5rem;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          border-left: 8px solid $grey-800;
+          border-right: none;
+          display: block;
+        }
+      }
+    }
+
+    &.#{map-get($isClass, visible)} {
+      @include visibleTooltip();
+
+      .#{map-get($tooltip, class)}#{map-get($tooltip, close)} {
+        display: block;
+      }
+    }
+
+    &.#{map-get($isClass, hidden)} {
+      visibility: hidden;
+      opacity: 0;
+      transform: scale(0);
+
+      @include set-from-screen('m') {
+        transition: all 0.4s;
+        transform: scale(0.5);
+      }
+    }
+  }
+
+  &#{map-get($tooltip, content)} {
+    word-wrap: break-word;
+    color: $white;
+  }
+
+  &.#{map-get($isClass, hover)} {
+    cursor: pointer;
+
+    &:hover {
+      .#{map-get($tooltip, class)}#{map-get($tooltip, wrapper)} {
+        @include visibleTooltip();
+      }
+    }
+  }
+
+  &:not(.#{map-get($isClass, click)}) {
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .#{map-get($tooltip, class)}#{map-get($tooltip, container)}:hover,
+    .#{map-get($tooltip, class)}#{map-get($tooltip, button)}:focus {
+      .#{map-get($tooltip, class)}#{map-get($tooltip, wrapper)} {
+        @include visibleTooltip();
+      }
+
+      .#{map-get($tooltip, class)}#{map-get($tooltip, pointer)} {
+        @include visibleTooltip();
+
+        @include set-from-screen('m') {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+/** pour ie11  */
+/* stylelint-disable */
+_:-ms-fullscreen,
+:root {
+  .#{map-get($tooltip, class)} {
+    &__close svg {
+      vertical-align: top;
+    }
+
+    &#{map-get($tooltip, wrapper)}{
+      @include set-from-screen('m') {
+        top: inherit;
+        transform: translateY(-50%) !important;
+      }
+
+      &--#{nth($positions, 3)} {
+        @include set-from-screen('m') {
+          transform: none !important;
+        }
+      }
+
+      &--#{nth($positions, 4)} {
+        @include set-from-screen('m') {
+          top: 2.2rem;
+          transform: none !important;
+        }
+      }
+
+      &--#{nth($positions, 1)} {
+        @include set-from-screen('m') {
+          top: inherit;
+          transform: translateY(-50%) !important;
+        }
+      }
+    }
+  }
+}
+
+
+/** HTML Layout/Tooltips
+<div class="kl-tooltip">
+    Batnae municipium in Anthemusia conditum Macedonum manu priscorum ab Euphrate flumine brevi spatio disparatur, refertum mercatoribus opulentis, ubi annua sollemnitate
+    <span class="kl-tooltip__container js-tooltip1">
+        <button class="js-tooltip__button kl-tooltip__button" type="button" aria-label="info bulle">
+            <span class="js-tooltip__pointer is-tooltip-hidden kl-tooltip__pointer  kl-tooltip__pointer--right"></span>
+            <svg class="kl-hidden" xmlns="http://www.w3.org/2000/svg"><symbol id="Navigation_Notification_Information_24px" viewBox="0 0 24 24"><path d="M12,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22ZM12,4a8,8,0,1,0,8,8A8,8,0,0,0,12,4Z"></path><path d="M12,17a1,1,0,0,1-1-1V11.61a1,1,0,0,1,2,0V16A1,1,0,0,1,12,17Z"></path><circle cx="12" cy="8" r="1"></circle></symbol></svg>
+            <svg class="ku-icon-24 "><use href="#Navigation_Notification_Information_24px"></use></svg>
+        </button>
+        <aside class="js-tooltip__wrapper kl-tooltip__wrapper is-tooltip-hidden  kl-tooltip__wrapper--right">
+            <button class="js-tooltip__close-button kl-tooltip__close" type="button" aria-label="Fermeture">
+                <svg class="ku-icon-16 "><use href="#Navigation_Control_Cross_16px"></use></svg>
+            </button>
+            <div class="m-mon-context__content kl-tooltip__content">
+                On appelle combles perdus des combles qu'on ne peut ou ne veut pas aménager à cause d’une hauteur libre moyenne insuffisante, ou d’une mauvaise disposition des bois de la charpente.
+            </div>
+        </aside>
+    </span>
+</div>
+ */

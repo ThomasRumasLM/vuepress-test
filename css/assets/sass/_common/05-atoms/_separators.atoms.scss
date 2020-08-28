@@ -1,0 +1,13 @@
+@import 'node_modules/@mozaic-ds/styles/components/c.divider';
+
+.ka-separator {
+  @include add-separator($position: 'block') {
+    margin: $mu300 0 $mu050 0;
+  }
+}
+
+/* HTML separators/global
+    <div>
+        <span class="ka-separator"></span>
+    </div>
+*/

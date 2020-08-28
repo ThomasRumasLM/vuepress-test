@@ -1,0 +1,105 @@
+@import 'node_modules/@mozaic-ds/styles/components/c.toggle';
+
+$sw-height: 24px;
+$sw-width: 48px;
+$sw-border: get-border(m);
+
+.km-switch {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+
+  &__label {
+    margin-left: 0.8rem;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+
+    .km-switch__label {
+      margin-left: 0;
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+input[type='checkbox'].km-switch__input {
+  height: 0;
+  width: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+input[type='checkbox'].km-switch__input ~ .km-switch__element {
+  cursor: pointer;
+  text-indent: $sw-width + 12px;
+  display: flex;
+  align-items: center;
+  width: $sw-width;
+  height: $sw-height;
+  background: $color-grey-200;
+  border-radius: 99em;
+  position: relative;
+  transition: background ease 0.2s;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+  }
+
+  &::before {
+    border-bottom: get-border(m) solid $color-switch-ico;
+    border-right: get-border(m) solid $color-switch-ico;
+    height: round($sw-height / 4);
+    width: round($sw-height / 8);
+    transform: translateY(-50%) rotate(45deg) scale(0);
+    left: (($sw-width - $sw-height) + $sw-border) / 2;
+    top: round(($sw-height + ($sw-border * 2)) / 2.4);
+    opacity: 0;
+    transition: opacity ease 0.8s, transform ease 0.5s;
+  }
+
+  &::after {
+    top: $sw-border;
+    left: $sw-border;
+    width: $sw-height - ($sw-border * 2);
+    height: $sw-height - ($sw-border * 2);
+    background: $white;
+    border-radius: 99em;
+    transition: 0.3s;
+  }
+
+  &:active::after {
+    width: round(($sw-width / 3) * 2);
+  }
+
+  &:focus {
+    outline: 1px dotted $black;
+    outline: 5px auto -webkit-focus-ring-color;
+
+    &::after {
+      box-shadow: 0 2px 10px rgba($black, 0.15), 0 2px 4px rgba($black, 0.15);
+    }
+  }
+}
+
+input[type='checkbox'].km-switch__input:checked + .km-switch__element {
+  background: $color-switch-checked;
+
+  &::after {
+    left: calc(100% - #{$sw-border});
+    transform: translateX(-100%);
+  }
+
+  &::before {
+    opacity: 1;
+    transform: translateY(-50%) rotate(45deg) scale(1);
+  }
+}
+
+input[type='checkbox'].km-switch__input:focus ~ .km-switch__element {
+  outline: 1px dotted $black;
+  outline: 5px auto -webkit-focus-ring-color;
+}

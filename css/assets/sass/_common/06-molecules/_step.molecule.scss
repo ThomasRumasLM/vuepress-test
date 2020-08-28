@@ -1,0 +1,45 @@
+.km-step-pad {
+  margin-bottom: $mu200;
+
+  @include set-from-screen('l') {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+
+  &__number {
+    @include set-font-scale('07', 'm');
+
+    display: flex;
+    font-weight: get-font-weight('bold');
+    border: get-border(s) solid $primary-01-500;
+    justify-content: center;
+    align-items: center;
+    color: $primary-01-500;
+    border-radius: magic-unit-rem(2);
+    width: $mu300;
+    height: $mu300;
+    margin: 0 auto;
+  }
+
+
+  &__title {
+    @include set-font-scale('06', 'm');
+
+    font-weight: get-font-weight('bold');
+    padding-top: $mu075;
+    text-align: center;
+    color: $primary-01-500;
+  }
+
+  &__description {
+    @include set-font-scale('05', 'm');
+
+    color: $grey-700;
+    padding-top: $mu075;
+    text-align: center;
+  }
+}

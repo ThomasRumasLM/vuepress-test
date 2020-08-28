@@ -1,0 +1,11 @@
+.km-tile-quantity {
+  &--warning {
+    color: $warning-500;
+    font-weight: get-font-weight('bold');
+  }
+
+  &--error {
+    color: $danger-500;
+    font-weight: get-font-weight('bold');
+  }
+}

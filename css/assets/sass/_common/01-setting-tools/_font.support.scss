@@ -1,0 +1,25 @@
+$font-weight: (
+  light: 'light',
+  regular: 'regular',
+  bold: 'bold'
+);
+
+@function get-font-weight($weight: 'regular') {
+  @if (($weight != 'light') and ($weight != 'regular') and ($weight != 'bold')) {
+    @warn '#{$weight} Le font-weight demandé n\'existe pas. Les valeurs attendues sont regular (default), light ou bold';
+  }
+
+  @else {
+    @if ($weight == 'regular') {
+      @return 400;
+    }
+
+    @else if($weight == 'light') {
+      @return 300;
+    }
+
+    @else if($weight == 'bold') {
+      @return 600;
+    }
+  }
+}

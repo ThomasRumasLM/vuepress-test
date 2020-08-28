@@ -1,0 +1,167 @@
+@mixin set-default($inner) {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  @if ($inner) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    .col-line-end {
+      margin-right: 0 !important;
+      + [class^=col-] { clear: left; }
+    }
+
+    > [class*=col-] {
+      float: left;
+    }
+
+    .col-start-1 {
+      margin-left: 0;
+      clear: left;
+    }
+
+    .col-ie-offset-0 { margin-left: 0; }
+  }
+
+  @else {
+    margin-left: auto;
+    margin-right: auto;
+
+    .col-line-end {
+      margin-right: 0 !important;
+      + [class^=col-] { clear: left; }
+    }
+
+    > [class*=col-] { float: left; }
+
+    .col-start-1 {
+      margin-left: 0;
+      clear: left;
+    }
+
+    .col-ie-offset-0 { margin-left: 0; }
+  }
+}
+
+@mixin set-from-m-for-ie {
+  padding-left: #{$width-gutter-M/2}px;
+  padding-right: #{$width-gutter-M/2}px;
+  [class^=col] { margin-right: #{$width-gutter-M}px; }
+}
+
+@mixin set-from-l-for-ie {
+  padding-left: 0;
+  padding-right: 0;
+  width: #{$container-width-l};
+  [class^=col] { margin-right: #{$width-gutter-L}px; }
+}
+
+@mixin set-from-xl-for-ie {
+  width: #{$container-width-xl};
+  [class^=col] { margin-right: #{$width-gutter-XL}px; }
+}
+
+@mixin set-from-xxl-for-ie {
+  width: #{$container-width-xxl};
+  [class^=col] { margin-right: #{$width-gutter-XXL}px; }
+}
+
+@mixin set-grid-container-for-IE($from-breakpoint, $inner : false) {
+  @if ( not map-has-key($map: $screens, $key: $from-breakpoint)) {
+    @warn 'le breakpoint demandé dans le mixin set-grid-container-for-IE n\'existe pas. Au choix : s, m, l, xl, xxl';
+  }
+
+
+  @if ($from-breakpoint == 's') {
+    @include set-default($inner);
+
+    @if ($inner == false) {
+      padding-left: #{$width-gutter-S/2}px;
+      padding-right: #{$width-gutter-S/2}px;
+      // [class^=col] { margin-right: #{$width-gutter-S}px; }
+
+      @include set-from-screen('m') {
+        @include set-from-m-for-ie;
+      }
+
+      @include set-from-screen('l') {
+        @include set-from-l-for-ie;
+      }
+
+      @include set-from-screen('xl') {
+        @include set-from-xl-for-ie;
+      }
+
+      @include set-from-screen('xxl') {
+        @include set-from-xxl-for-ie;
+      }
+    }
+  }
+
+  @if ($from-breakpoint == 'm') {
+    @include set-from-screen('m') {
+      @include set-default($inner);
+
+      @if ($inner == false) {
+        @include set-from-m-for-ie;
+      }
+    }
+
+    @include set-from-screen('l') {
+      @include set-from-l-for-ie;
+    }
+
+    @include set-from-screen('xl') {
+      @include set-from-xl-for-ie;
+    }
+
+    @include set-from-screen('xxl') {
+      @include set-from-xxl-for-ie;
+    }
+  }
+
+  @if ($from-breakpoint == 'l') {
+    @include set-from-screen('l') {
+      @include set-default($inner);
+
+      @if ($inner == false) {
+        @include set-from-l-for-ie;
+      }
+    }
+
+    @include set-from-screen('xl') {
+      @include set-from-xl-for-ie;
+    }
+
+    @include set-from-screen('xxl') {
+      @include set-from-xxl-for-ie;
+    }
+  }
+
+  @if ($from-breakpoint == 'xl') {
+    @include set-from-screen('xl') {
+      @include set-default($inner);
+
+      @if ($inner == false) {
+        @include set-from-xl-for-ie;
+      }
+    }
+
+    @include set-from-screen('xxl') {
+      @include set-from-xxl-for-ie;
+    }
+  }
+
+  @if ($from-breakpoint == 'xxl') {
+    @include set-from-screen('xxl') {
+      @include set-default($inner);
+
+      @if ($inner == false) {
+        @include set-from-xxl-for-ie;
+      }
+    }
+  }
+}

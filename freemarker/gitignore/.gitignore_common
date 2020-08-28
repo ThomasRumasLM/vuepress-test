@@ -1,0 +1,56 @@
+## ------ Globaly shared gitignore (copied from lmfr-int-socle-freemarker) ------ START -- ##
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.scannerwork
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Socle ###
+src/main/resources/static/fonts
+src/main/resources/static/icon-kit
+src/main/resources/static/polyfill/common
+src/main/resources/templates/macros/common
+
+### Node ###
+node_modules/
+npm-debug.log
+
+### Git ###
+*.orig
+
+# Tests taurus 
+testperf-*-module/[0-9]*
+
+## ------ normalize-commit ------ ##
+.huskyrc.js
+commitlint.config.js
+commitlint.examples.js
+## ------ /normalize-commit ------ ##
+
+## ------ ESLINT ------ ##
+.eslintrc.json
+
+## ------ Globaly shared gitignore (copied from lmfr-int-socle-freemarker) ------ END -- ##
+
+## ------ Insert specific gitignore for your application below this line ------ ##

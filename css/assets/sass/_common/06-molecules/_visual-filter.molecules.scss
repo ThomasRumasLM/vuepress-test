@@ -1,0 +1,104 @@
+$vf-border: get-border(m);
+$vf-height: 4rem;
+$vf-width: 4rem;
+
+.km-visual-filter {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__label {
+    margin-left: 0.8rem;
+    cursor: pointer;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+    margin: 0;
+  }
+
+  &__element {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: $vf-width;
+    height: $vf-height;
+    margin-right: $mu075;
+    fill: $grey-300;
+    background: $grey-100;
+    border-radius: 5px;
+    border: $vf-border solid $grey-300;
+
+    &:focus {
+      outline: 1px dotted $black;
+      outline: 5px auto -webkit-focus-ring-color;
+
+      &::after {
+        box-shadow: 0 2px 10px rgba($black, 0.15), 0 2px 4px rgba($black, 0.15);
+      }
+    }
+  }
+
+  &__element-image {
+    position: absolute;
+    min-width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    pointer-events: none;
+  }
+
+  &__check {
+    display: none;
+  }
+
+  &__input {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+
+    &:checked + .km-visual-filter__element {
+      border-color: $black;
+
+      .km-visual-filter__check {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        margin: $mu025;
+        border-radius: 1rem;
+        background: $white;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          left: 50%;
+          width: 4px;
+          height: 7px;
+          margin-left: -4px;
+          border: solid $color-switch-checked;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg) translate(-50%, -50%);
+        }
+      }
+    }
+
+    &:focus ~ .km-visual-filter__element {
+      outline: 1px dotted $black;
+      outline: 5px auto -webkit-focus-ring-color;
+    }
+  }
+}

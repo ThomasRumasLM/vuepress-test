@@ -1,0 +1,45 @@
+@import 'node_modules/@mozaic-ds/styles/components/c.stars-result';
+@import 'node_modules/@mozaic-ds/styles/components/c.stars-input';
+
+.ka-ratingstars {
+  display: inline-block;
+  font-size: 0;
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__star {
+    fill: $grey-200;
+
+    &--full {
+      fill: $secondary-orange-400;
+    }
+
+    &--half {
+      position: absolute;
+      fill: $secondary-orange-400;
+    }
+  }
+}
+
+// HTML ratingstars
+// <fieldset class="ka-ratingstars">
+//     <picture class="ka-ratingstars__wrapper">
+//         <svg class="ku-icon-24 ka-ratingstars__star ka-ratingstars__star--full"><use href="#Social_View_Star--Full_24px"></use></svg>
+//     </picture>
+//     <picture class="ka-ratingstars__wrapper">
+//         <svg class="ku-icon-24 ka-ratingstars__star ka-ratingstars__star--full"><use href="#Social_View_Star--Full_24px"></use></svg>
+//     </picture>
+//     <picture class="ka-ratingstars__wrapper">
+//         <svg class="ku-icon-24 ka-ratingstars__star ka-ratingstars__star--full"><use href="#Social_View_Star--Full_24px"></use></svg>
+//     </picture>
+//     <picture class="ka-ratingstars__wrapper">
+//         <svg class="ku-icon-24 ka-ratingstars__star ka-ratingstars__star--full"><use href="#Social_View_Star--Full_24px"></use></svg>
+//     </picture>
+//     <picture class="ka-ratingstars__wrapper">
+//         <svg class="ku-icon-24 ka-ratingstars__star ka-ratingstars__star--half"><use href="#Social_View_Star--Half_24px"></use></svg>
+//     <svg class="ku-icon-24 ka-ratingstars__star"><use href="#Social_View_Star--Full_24px"></use></svg>
+//     </picture>
+// </fieldset>

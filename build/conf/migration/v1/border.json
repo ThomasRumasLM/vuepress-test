@@ -1,0 +1,29 @@
+{
+    "files": "./src/main/resources/**/*.*",
+    "ignore": [
+        "./**/*.png",
+        "./**/*.jpg",
+        "./**/*.gif",
+        "./**/*.eot",
+        "./**/*.woff",
+        "./**/macros/common/**/*.ftl",
+        "./**/icon-kit/*.*"
+    ],
+    "transform": [
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$border-s",
+            "newSyntax" : "get-border(s)"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$border-m",
+            "newSyntax" : "get-border(m)"
+        },
+        {
+            "type" : "replacement",
+            "oldSyntax" : "$border-l",
+            "newSyntax" : "get-border(l)"
+        }
+    ]
+} 

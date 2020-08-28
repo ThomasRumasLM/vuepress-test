@@ -1,0 +1,54 @@
+.km-push-image {
+  border: get-border(s) solid $grey-200;
+  border-radius: get-border-radius(m);
+  display: flex;
+
+  &__content {
+    padding: $mu150 $mu100;
+  }
+
+  &__title {
+    @include set-font-scale('05', 'm');
+
+    color: $grey-900;
+    position: relative;
+    font-weight: get-font-weight('bold');
+
+    @include set-from-screen('m') {
+      @include set-font-scale('06', 'm');
+    }
+  }
+
+  &__description {
+    @include set-font-scale('04', 'm');
+
+    color: $grey-800;
+    margin-top: $mu075;
+
+    @include set-from-screen('m') {
+      @include set-font-scale('05', 'm');
+    }
+  }
+
+  &__link {
+    @include set-font-scale('04', 'm');
+
+    display: block;
+    margin-top: $mu075;
+
+    @include set-from-screen('m') {
+      @include set-font-scale('05', 'm');
+    }
+  }
+
+  &__picture {
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 33%;
+
+    &--image {
+      position: absolute;
+      height: 100%;
+    }
+  }
+}

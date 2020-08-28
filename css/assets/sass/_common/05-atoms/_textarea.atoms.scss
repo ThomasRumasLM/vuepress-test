@@ -1,0 +1,29 @@
+@import 'node_modules/@mozaic-ds/styles/components/c.textarea';
+
+.ka-textarea {
+  @include resetInput;
+  @include inputCommunStyle;
+
+  padding: $mu100;
+  min-height: px-to-rem(200);
+  // State
+  &.is-valid {
+    @include inputValidStyle;
+  }
+  // State
+  &.is-invalid {
+    @include inputInvalidStyle;
+  }
+  // State
+  &:hover {
+    @include inputHoverStyle;
+  }
+  // State
+  &:focus {
+    @include inputFocusStyle;
+  }
+  // State
+  &:disabled {
+    @include inputDisabledStyle;
+  }
+}

@@ -1,0 +1,41 @@
+.km-hero-box {
+  background: $white;
+  border-radius: get-border-radius(m);
+  padding: $mu150;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  display: inline-table;
+  width: 100%;
+
+  &__title {
+    @include set-font-scale('08', 'm');
+
+    padding-bottom: $mu050;
+    font-weight: get-font-weight('bold');
+
+    @include add-separator($position: 'bottom', $color: $primary-01-500, $height: get-border(m)) {
+      margin-top: $mu100;
+      width: $mu600;
+    }
+  }
+
+  &__description {
+    @include set-font-scale('04', 'm');
+
+    padding-top: $mu050;
+    color: $grey-700;
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: $mu100;
+    text-align: center;
+  }
+}
+
+/* HTML Molecules/Hero_box
+    <div class="km-hero-box>
+        <h2 class="km-hero-box__title">my title</h2>
+        <p class="km-hero-box__description">my description</p>
+        <a href="#" class="ka-button km-hero-box__button">my button</a> <# Can be optionnal />
+    </div>
+*/

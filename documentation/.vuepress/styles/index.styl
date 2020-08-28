@@ -1,0 +1,69 @@
+div.theme-default-content:not(.custom),
+footer.page-edit,
+div.page-nav {
+    max-width: 100%;
+
+    @media (min-width: $MQNarrow) {
+        max-width: 90%;
+    }
+}
+
+div.el-tabs__item {
+    padding: 10px 20px;
+    height: auto;
+    font-size: 1.25rem;
+}
+
+div.el-tabs--border-card > .el-tabs__content {
+    padding: 20px 30px;
+}
+
+code {
+  white-space : pre-wrap !important;
+}
+
+a.nav-link,
+a.sidebar-link,
+a.sidebar-heading,
+p a,
+li a,
+td a,
+h2 a {
+    text-decoration: unset;
+}
+
+a.nav-link,
+a.sidebar-link,
+p a,
+li a,
+td a,
+h1 a,
+h2 a {
+    color: $accentColor;
+}
+
+div {
+    h1 {
+        font-size 2.2rem;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size 1.65rem;
+        padding-bottom .3rem;
+        border-bottom 1px solid $borderColor;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size 1.35rem;
+        font-weight: 600;
+    }
+
+}
+
+table {
+    td, th {
+        padding: 0.5rem 1rem;
+    }
+}

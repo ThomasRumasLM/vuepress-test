@@ -1,0 +1,33 @@
+.km-toggle-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $mu100;
+  background: $white;
+
+  @include set-from-screen('l') {
+    padding: $mu100 $mu050 $mu100 0;
+  }
+
+  &__label {
+    @include set-font-scale('06', 'm');
+
+    font-weight: get-font-weight('bold');
+    text-align: left;
+    flex: 1;
+    margin-left: 0;
+  }
+
+  &__label-quantity {
+    @include set-font-scale('05', 'm');
+
+    font-weight: get-font-weight('regular');
+    color: $grey-500;
+  }
+
+  &__container {
+    width: 100%;
+  }
+}
+
+

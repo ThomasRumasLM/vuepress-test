@@ -1,0 +1,17 @@
+
+@mixin iconSize($size) {
+  width: #{$size}px;
+  height: #{$size}px;
+}
+
+$icon-size: (16, 24, 32, 48, 64);
+
+@each $size in $icon-size {
+  .ku-icon-#{$size} {
+    @include iconSize($size);
+  }
+}
+
+.ku-show-icon {
+  display: block;
+}

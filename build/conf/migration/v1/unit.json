@@ -1,0 +1,19 @@
+{
+	"files": "./src/main/resources/**/*.*",
+	"ignore": [
+		"./**/*.png",
+		"./**/*.jpg",
+		"./**/*.gif",
+		"./**/*.eot",
+		"./**/*.woff",
+		"./**/macros/common/**/*.ftl",
+		"./**/icon-kit/*.*"
+	],
+	"transform": [
+		{
+			"type": "replacement",
+			"oldSyntax": "pxToRem",
+			"newSyntax": "px-to-rem"
+		}
+	]
+} 

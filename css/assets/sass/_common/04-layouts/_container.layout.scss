@@ -1,0 +1,16 @@
+.kl-container {
+  margin: 0 auto;
+  width: $container-width-full;
+
+  @include set-from-screen('l') {
+    width: $container-width-l;
+  }
+
+  @include set-from-screen('xl') {
+    width: $container-width-xl;
+  }
+
+  @include set-from-screen('xxl') {
+    width: $container-width-xxl;
+  }
+}
