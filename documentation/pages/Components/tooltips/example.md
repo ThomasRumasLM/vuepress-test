@@ -1,5 +1,5 @@
 <template>
-<ShowHtml>
+<ShowHtml :key="componentKey" >
 <div class="example">
     <p class="subtitle">Default behavior (top):</p>
     <div class="kl-tooltip js-tooltip1">
@@ -196,7 +196,18 @@
 <script>
 
 export default {
-    updated() {
+    name: "Tooltip",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
         import('../../../../js/assets/modules/_tooltip.class.js')
         .then(m => {
             const TooltipsModule1 = new m.Tooltip({

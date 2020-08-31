@@ -46,13 +46,16 @@
     <h2>Dependencies versions in LMFR applications</h2>
     <section class="db__app">
       <div class="db__app--filter">
-        <button class="mc-tag js-reset-filters">reset filters</button>
         <input
-          class="db__app--input"
+          class="mc-text-input mc-text-input--s db__app--input"
           type="text"
           id="filter"
           placeholder="Chercher des applications"
         />
+        <button
+          v-on:click="resetFilters"
+          class="mc-button mc-button--bordered mc-button--s js-reset-filters"
+        >reset filters</button>
       </div>
       <div class="db__app--content col-container-inner">
         <DashboardCard
@@ -77,7 +80,6 @@ const dashboardObject = dashboard.dashboardObject;
 const currentCore = dashboard.currentCore;
 const currentKobi = dashboard.currentKobi;
 const lastUpdateDate = dashboard.lastUpdateDate;
-
 export default {
   name: "Dashboard",
   components: {
@@ -91,65 +93,41 @@ export default {
   }),
   methods: {
     filterApp() {
-      this.searchField.addEventListener("keyup", e => {
+      this.searchField.addEventListener("keyup", (e) => {
         let searchString = e.target.value;
-
         if (searchString == "") {
-          [].forEach.call(this.appList, el => {
+          [].forEach.call(this.appList, (el) => {
             el.classList.remove("kl-hidden");
           });
           return;
         }
-
-        [].forEach.call(this.appList, el => {
+        [].forEach.call(this.appList, (el) => {
           el.classList.add("kl-hidden");
         });
-
         let searchTerms = searchString.split(",");
         for (var i = searchTerms.length - 1; i >= 0; i--) {
           if (searchTerms[i].trim() == "") {
             continue;
           }
-          let match = this.target.querySelectorAll(
+          let match = document.querySelectorAll(
             "article.js-app[id*=" + searchTerms[i] + "]"
           );
-          [].forEach.call(match, el => {
+          [].forEach.call(match, (el) => {
             el.classList.remove("kl-hidden");
           });
         }
       });
     },
-    filterByParams() {
-      let urlParams = new URLSearchParams(window.location.search);
-      let query = urlParams.get("search");
-      this.searchField.value = query;
-      this.searchField.dispatchEvent(new Event("keyup"));
-    },
-    filterByTeam(target) {
-      let teamName = target.textContent;
-      console.log(teamName);
-      [].forEach.call(this.appList, el => {
-        el.classList.add("kl-hidden");
-      });
-
-      let match = document.querySelectorAll(`[data-team="${teamName}"]`);
-      [].forEach.call(match, el => {
-        el.classList.remove("kl-hidden");
-      });
-    },
     resetFilters() {
-      [].forEach.call(this.appList, el => {
+      [].forEach.call(this.appList, (el) => {
         el.classList.remove("kl-hidden");
       });
     },
   },
   mounted() {
-    // console.log("currentCore", currentCore);
-    // console.log("currentKobi", currentKobi);
-    // console.log("lastUpdateDate", lastUpdateDate);
-    // dashboardObject.forEach((element) => {
-    //   console.log(JSON.stringify(element));
-    // });
+    this.searchField = document.querySelector("#filter");
+    this.appList = document.querySelectorAll("article.js-app");
+    this.filterApp();
   },
 };
 </script>
@@ -157,6 +135,7 @@ export default {
 <style lang="scss" scoped>
 @import '../public/sass/common';
 @import 'css/assets/sass/_common/01-setting-tools/all-settings';
+@import 'css/assets/sass/_common/10-bundles/form.bundle';
 @import 'css/assets/sass/_common/05-atoms/tags.atoms';
 
 h2 {
@@ -226,6 +205,7 @@ h2 {
     }
 
     &--input {
+      max-width: 50%;
       font-style: italic;
     }
 

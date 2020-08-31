@@ -1,5 +1,5 @@
 <template>
-<ShowHtml>
+<ShowHtml :key="componentKey" >
 <div class="example">
     <div class="kl-swiper__slider-container mySwiperSlider">
         <nav class="kl-swiper__controls" aria-label="Carousel Navigation" tabindex="0">
@@ -43,7 +43,18 @@
 
 <script>
 export default {
-    updated() {
+    name: "Swiper",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
         import('../../../../js/assets/modules/_swiperSlider.class')
         .then(m => {
             let mySwiper = document.querySelector('.mySwiperSlider');

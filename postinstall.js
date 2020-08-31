@@ -5,8 +5,7 @@ const path = require('path');
 const shell = require('shelljs');
 const {exec} = require('child_process');
 
-const turbineToken =
-  process.env.npm_config_turbinetoken || process.env.turbinetoken;
+const turbineToken = process.env.npm_config_turbinetoken || process.env.turbinetoken;
 
 const lmfrSiteProdUrl = 'https://www.leroymerlin.fr/lmfr-site';
 

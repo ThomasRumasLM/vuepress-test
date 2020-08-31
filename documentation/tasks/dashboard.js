@@ -6,10 +6,10 @@ const http = require('https');
 const colors = require('colors/safe');
 
 // ---------------- VARS --- /
-const turbineEnv = 'frlm-web-website-ref';
+const turbineEnv = 'cdp-due-website-frlm-uat1';
 const generatorApiUrl = 'api.github.com/repos/adeo/';
 const turbineToken = process.env.npm_config_turbinetoken || process.env.turbinetoken;
-const token = process.env.npm_config_github || process.env.github;
+const token = process.env.npm_config_githubToken || process.env.githubToken;
 
 if (!token || !turbineToken) {
   if (!token) {

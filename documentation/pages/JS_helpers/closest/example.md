@@ -31,7 +31,7 @@ body {
 
 <script>
 export default {
-    updated() {
+    mounted() {
         let c1 = document.querySelector('.js-closest-demo child1');
         let c2 = document.querySelector('.js-closest-demo child2');
         lm.getClosest(c1, '.parent');

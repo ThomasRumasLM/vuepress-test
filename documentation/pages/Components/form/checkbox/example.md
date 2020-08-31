@@ -1,8 +1,8 @@
 <template>
-<ShowHtml>
+<ShowHtml :key="componentKey" >
 <form id="my-form">
 <div class="example">
-    <p class="a-subtitle">Checkbox list</p>
+    <p class="subtitle">Checkbox list</p>
     <fieldset class="mc-field mc-field--group toto-1 " data-toto="toto-1">
         <legend class="mc-field__label">
                 Label
@@ -35,7 +35,7 @@
             </li>
         </ul>
     </fieldset>
-    <p class="a-subtitle"><br /><br />Checkbox list inline<br /><br /></p>
+    <p class="subtitle">Checkbox list inline</p>
     <fieldset class="mc-field mc-field--group toto-1 " data-toto="toto-1">
         <legend class="mc-field__label">
                 Label
@@ -44,37 +44,38 @@
             <span class="mc-field__help">Plusieurs choix possible</span>
             <ul data-missing="Ce champ est obligatoire" class="mc-field__container mc-field__container--inline js-form-field-list">
             <li class="mc-checkbox mc-field__item class-on-li" data-truc="data-on-li">
-                <input required="" aria-label="inline 1 Choix numéro 1 : inline 1" type="checkbox" class="mc-checkbox__input  js-form-checkbox" name="test1" id="test1--991--0" aria-describedby="error__test1--991" value="inline checkbox" aria-checked="false">
-                <label aria-hidden="true" class="mc-checkbox__label " for="test1--991--0">inline
+                <input required="" aria-label="inline 1 Choix numéro 1 : inline 1" type="checkbox" class="mc-checkbox__input  js-form-checkbox" name="test1" id="test1--992--0" aria-describedby="error__test1--992" value="inline checkbox" aria-checked="false">
+                <label aria-hidden="true" class="mc-checkbox__label " for="test1--992--0">inline
                 </label>
             </li>
             <li class="mc-checkbox mc-field__item class-on-li" data-truc="data-on-li">
-            <input required="" aria-label="inline 2 Choix numéro 2 : inline 2" type="checkbox" class="mc-checkbox__input  js-form-checkbox" name="test1" id="test1--991--1" aria-describedby="error__test1--991" value="inline checkbox" aria-checked="false">
-                <label aria-hidden="true" class="mc-checkbox__label " for="test1--991--1">inline
+            <input required="" aria-label="inline 2 Choix numéro 2 : inline 2" type="checkbox" class="mc-checkbox__input  js-form-checkbox" name="test1" id="test1--992--1" aria-describedby="error__test1--992" value="inline checkbox" aria-checked="false">
+                <label aria-hidden="true" class="mc-checkbox__label " for="test1--992--1">inline
                 </label>
             </li>
             <li class="mc-checkbox mc-field__item class-on-li" data-truc="data-on-li">
-            <input required="" aria-label="inline 3 Choix numéro 3 : inline 3" type="checkbox" class="mc-checkbox__input  js-form-checkbox" name="test1" id="test1--991--2" aria-describedby="error__test1--991" value="inline checkbox" aria-checked="false">
-                <label aria-hidden="true" class="mc-checkbox__label " for="test1--991--2">inline
+            <input required="" aria-label="inline 3 Choix numéro 3 : inline 3" type="checkbox" class="mc-checkbox__input  js-form-checkbox" name="test1" id="test1--992--2" aria-describedby="error__test1--992" value="inline checkbox" aria-checked="false">
+                <label aria-hidden="true" class="mc-checkbox__label " for="test1--992--2">inline
                 </label>
             </li>
             <li class="mc-checkbox mc-field__item class-on-li" data-truc="data-on-li">
-            <input required="" aria-label="inline 4 Choix numéro 4 : inline 4" type="checkbox" class="mc-checkbox__input  js-form-checkbox" name="test1" id="test1--991--3" aria-describedby="error__test1--991" value="inline checkbox" aria-checked="false">
-                <label aria-hidden="true" class="mc-checkbox__label " for="test1--991--3">inline
+            <input required="" aria-label="inline 4 Choix numéro 4 : inline 4" type="checkbox" class="mc-checkbox__input  js-form-checkbox" name="test1" id="test1--992--3" aria-describedby="error__test1--992" value="inline checkbox" aria-checked="false">
+                <label aria-hidden="true" class="mc-checkbox__label " for="test1--992--3">inline
                 </label>
             </li>
         </ul>
     </fieldset>
-    <p class="a-subtitle"><br /><br />Checkbox alone<br /><br /></p>
+    <p class="subtitle">Checkbox alone</p>
         <div class="mc-checkbox toto-1" data-toto="toto-1">
-            <input aria-label="triste Choix numéro 1 : triste" type="checkbox" class="mc-checkbox__input mc-checkbox innerClass-input js-form-checkbox" name="test1" id="test1--991--0" aria-describedby="error__test1--991" value="Je suis triste" aria-checked="false" data-truc="truc-on-input">
-            <label aria-hidden="true" class="mc-checkbox__label  innerClass-label" for="test1--991--0" data-truc="truc-on-label">i'm alone
+            <input aria-label="triste Choix numéro 1 : triste" type="checkbox" class="mc-checkbox__input mc-checkbox innerClass-input js-form-checkbox" name="test1" id="test1--993--0" aria-describedby="error__test1--993" value="Je suis triste" aria-checked="false" data-truc="truc-on-input">
+            <label aria-hidden="true" class="mc-checkbox__label  innerClass-label" for="test1--993--0" data-truc="truc-on-label">i'm alone
                     <span class="mc-checkbox__suffix-label  class-inner-suffix" data-test="data-attribute-suffix">
                     (yes, you know...)
                     </span>
             </label>
         </div>
 </div>
+<button class="mc-button mc-button--s doc-submit" form="km-form" type="submit"><span class="mc-button__label">Submit</span></button>
 </form>
 </ShowHtml>
 </template>
@@ -86,11 +87,26 @@
 .example {
   margin: 1rem auto;
 }
+
+.doc-submit {
+  margin-top: 1rem;
+}
 </style>
 
 <script>
 export default {
-    updated() {
+    name: "Checkbox",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
         import('../../../../../js/assets/modules/_forms.js')
         .then(m => {
             let myForm = document.querySelector('form#my-form');

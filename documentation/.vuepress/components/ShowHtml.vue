@@ -9,8 +9,6 @@
 </template>
 
 <style lang="scss" scoped >
-// @import '../public/sass/common';
-
 .subtitle {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
@@ -31,7 +29,6 @@
     margin-top: 2rem;
   }
 }
-
 </style>
 
 <script>

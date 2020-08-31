@@ -1,5 +1,5 @@
 <template>
-<ShowHtml>
+<ShowHtml :key="componentKey" >
 <div class="km-carousel km-carousel--bevel-right-l">
     <nav class="km-carousel__controls" id="js-my-carousel-controls" aria-label="Carousel Navigation" tabindex="0">
         <button data-controls="prev" aria-controls="customize" tabindex="-1" class="ka-nav-button ka-nav-button--l" type="button" aria-label="Précédent">
@@ -34,7 +34,18 @@
 
 <script>
 export default {
-    updated() {
+    name: "Carousel",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
         import('../../../../js/assets/modules/_carousel.class')
         .then(m => {
             const _options = {

@@ -1,5 +1,5 @@
 <template>
-<ShowHtml>
+<ShowHtml :key="componentKey" >
 <div class="example">
     <button class="mc-button js-popin-btn-1">
         Popin simple M (générée via Javascript)
@@ -53,34 +53,39 @@
 
 <script>
 export default {
-    updated() {
+    name: "Popin",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
         // POPIN 1 : JS GENERATED
         const popinConfig = {
-        'content': {
-            cssClass: '',
-            title: 'Popin de démo en taille M',
-            subTitle: 'Je suis une popin de démo en taille M',
-            contentHTML: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut consectetur leo. Nulla facilisi. Donec dapibus magna mauris, eu sagittis nisi venenatis ac. Fusce consequat pellentesque ante, id rhoncus turpis sollicitudin quis. Maecenas molestie tortor mi, in blandit ligula elementum quis. Cras condimentum lobortis mi.',
-            footerHTML: '<button class="mc-button js-close-popin">Fermer</button>'
-        }
+            'content': {
+                cssClass: '',
+                title: 'Popin de démo en taille M',
+                subTitle: 'Je suis une popin de démo en taille M',
+                contentHTML: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut consectetur leo. Nulla facilisi. Donec dapibus magna mauris, eu sagittis nisi venenatis ac. Fusce consequat pellentesque ante, id rhoncus turpis sollicitudin quis. Maecenas molestie tortor mi, in blandit ligula elementum quis. Cras condimentum lobortis mi.',
+                footerHTML: '<button class="mc-button js-close-popin">Fermer</button>'
+            }
         };
 
         const popinTest1 = new lm.Popin(popinConfig);
         const popinButton1 = document.querySelector('.js-popin-btn-1');
-        console.log(popinButton1);
-
         popinButton1.addEventListener('click', e => { popinTest1.open(); });
-
-
 
         // POPIN 2 : ALLREADY IN DOM
         const popinConfig2 = {
-        'content': '.js-mypopin'
+            'content': '.js-mypopin'
         };
         const popinTest2 = new lm.Popin(popinConfig2);
         const popinButton2 = document.querySelector('.js-popin-btn-2');
-        console.log(popinButton2);
-
         popinButton2.addEventListener('click', e => { popinTest2.open(); });
     }
 }

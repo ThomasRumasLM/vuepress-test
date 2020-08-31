@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    updated() {
+    mounted() {
         const output = document.querySelectorAll('.js-characters li');
         lm.forEach(output, (item, i) => {
         console.log(`&bull; ${item.innerHTML}`);

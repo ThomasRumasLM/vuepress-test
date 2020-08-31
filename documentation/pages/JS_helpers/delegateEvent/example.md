@@ -16,7 +16,7 @@
 
 <script>
 export default {
-    updated() {
+    mounted() {
         document.querySelector('.parent').delegateEvent('click', 'button.js-action', event => {
         console.log( event.target );
         // Return "<button class="js-action">click here</button>"

@@ -1,4 +1,6 @@
 // const { nav, sidebar } = require("vuepress-bar")(`${__dirname}/..`);
+const pluginList = require('@mozaic-ds/css-dev-tools/postcssPluginConfig');
+const scssSyntax = require('postcss-scss');
 const path = require('path');
 const dirPath = path.join(process.cwd(), 'documentation/pages/');
 const sidebarMenu = require('./sidebarMenu');
@@ -75,6 +77,15 @@ module.exports = {
           {
             test: /\.txt$/i,
             use: 'raw-loader',
+          },
+          {
+            test: /\.scss$/,
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              syntax: scssSyntax,
+              plugins: pluginList,
+            },
           },
         ],
       }

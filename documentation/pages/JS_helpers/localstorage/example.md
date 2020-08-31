@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    updated() {
+    mounted() {
         lm.localStorageLM.set('key', 'value');
         // > Set {key: value} to localStorage, for 1 day, in LMData object (default)
         lm.localStorageLM.get('key');

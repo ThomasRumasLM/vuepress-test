@@ -1,5 +1,6 @@
 <template>
 <ShowHtml>
+<form role="form" action="" method="GET" id="km-form">
 <div class="mc-field myWrapperClass" data-toto="toto">
     <label class="mc-field__label" for="--998">
     </label>
@@ -138,6 +139,8 @@
             </label>
     </div>
 </div>
+<button class="mc-button mc-button--s doc-submit" form="km-form" type="submit"><span class="mc-button__label">Submit</span></button>
+</form>
 </ShowHtml>
 </template>
 
@@ -145,7 +148,33 @@
 @import 'css/assets/sass/_common/01-setting-tools/all-settings';
 @import 'css/assets/sass/_common/05-atoms/ratingstars.atoms';
 
-.example {
-  margin: 1rem auto;
+.doc-submit {
+  margin-top: 1rem;
 }
 </style>
+
+<script>
+export default {
+    name: "RatingStars",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
+        import('../../../../js/assets/modules/_forms.js')
+        .then(m => {
+            let myForm = document.querySelector('form#my-form');
+            let formInstance = new m.Formulaire(myForm);
+        })
+        .catch(error => {
+            console.log(error)
+        });
+    }
+}
+</script>

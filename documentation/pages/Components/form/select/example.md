@@ -1,8 +1,8 @@
 <template>
-<ShowHtml>
+<ShowHtml :key="componentKey" >
 <form id="my-form">
 <div class="example">
-    <p class="a-subtitle">Select option group with fields</p>
+    <p class="subtitle">Select option group with fields</p>
     <fieldset class="mc-field toto js-select-wrapper" data-toto="toto">
         <label class="mc-field__label" for="testSelect--975">
             Votre description
@@ -34,7 +34,7 @@
             </optgroup>
         </select>
     </fieldset>
-    <p class="a-subtitle">Select simple with fields</p>
+    <p class="subtitle">Select simple with fields</p>
     <div class="mc-field toto js-select-wrapper" data-toto="toto">
         <label class="mc-field__label" for="testSelectSimple--973">
             Votre description
@@ -55,7 +55,7 @@
             </option>
         </select>
     </div>
-    <p class="a-subtitle">Select with no order option</p>
+    <p class="subtitle">Select with no order option</p>
     <div class="mc-field toto js-select-wrapper" data-toto="toto">
         <label class="mc-field__label" for="testSelectDefault--971">
             Votre description
@@ -74,6 +74,7 @@
         </select>
     </div>
 </div>
+<button class="mc-button mc-button--s doc-submit" form="km-form" type="submit"><span class="mc-button__label">Submit</span></button>
 </form>
 </ShowHtml>
 </template>
@@ -85,11 +86,26 @@
 .example {
   margin: 1rem auto;
 }
+
+.doc-submit {
+  margin-top: 1rem;
+}
 </style>
 
 <script>
 export default {
-    updated() {
+    name: "Select",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
         import('../../../../../js/assets/modules/_forms.js')
         .then(m => {
             let myForm = document.querySelector('form#my-form');

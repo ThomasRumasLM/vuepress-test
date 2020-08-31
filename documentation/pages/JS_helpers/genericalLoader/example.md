@@ -1,5 +1,5 @@
 <template>
-<ShowHtml>
+<ShowHtml :key="componentKey" >
 <div>
     <div class="myLoaderContainer"></div>
 </div>
@@ -11,7 +11,18 @@
 import GenericalLoader from '../../../../js/assets/modules/_genericalLoader.class.js'
 
 export default {
-    updated() {
+    name: "GenericalLoader",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
         import('../../../../js/assets/modules/_genericalLoader.class.js')
         .then(m => {
             //Object instanciation

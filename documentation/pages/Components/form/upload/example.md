@@ -1,5 +1,5 @@
 <template>
-<ShowHtml>
+<ShowHtml :key="componentKey" >
 <form id="my-form">
 <div class="example">
     <div class="mc-field">
@@ -28,6 +28,7 @@
     </div>
     </div>
 	</div>
+<button class="mc-button mc-button--s doc-submit" form="km-form" type="submit"><span class="mc-button__label">Submit</span></button>
 </form>
 </ShowHtml>
 </template>
@@ -39,11 +40,26 @@
 .example {
   margin: 1rem auto;
 }
+
+.doc-submit {
+  margin-top: 1rem;
+}
 </style>
 
 <script>
 export default {
-    updated() {
+    name: "Upload",
+    data() {
+        return {
+            componentKey: 0,
+        };
+    },
+    methods: {
+        forceRerender() {
+            this.componentKey += 1;
+        }
+    },
+    mounted() {
         import('../../../../../js/assets/modules/_forms.js')
         .then(m => {
             let myForm = document.querySelector('form#my-form');

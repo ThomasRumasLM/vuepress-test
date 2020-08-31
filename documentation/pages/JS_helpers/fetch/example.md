@@ -5,7 +5,7 @@
 
 <script>
 export default {
-    updated() {
+    mounted() {
         // simple
         lm.fetch({
         'url': '/customer/services/userInfos'

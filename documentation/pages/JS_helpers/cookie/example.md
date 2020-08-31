@@ -5,7 +5,7 @@
 
 <script>
 export default {
-    updated() {
+    mounted() {
         lm.cookie.set('name', 'value', 'expireDays');
         lm.cookie.get('name');
         // return "value"

@@ -10,7 +10,7 @@ order: 1
 You can view a layer in this page : <a href="https://www.leroymerlin.fr/v3/mobile/product/show.do?reflm=80132683&storeId=11" target="_blank">Page with a layer</a><br />
 Click on a variant below the price.
 
-![Layer](/images/layer.png)
+<img :src="$withBase('/images/layer.png')" alt="layer">
 
 :::: tabs
 
