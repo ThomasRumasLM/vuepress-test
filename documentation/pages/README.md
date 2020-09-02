@@ -3,7 +3,7 @@ title: Structure
 blog_index: true
 ---
 
-# Blog
+# News
 
 Last articles:
 

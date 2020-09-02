@@ -37,6 +37,7 @@ module.exports = {
         plugins: [
           ['markdown-it-include', {
             root: dirPath,
+            throwError: false,
             includeRe: /\<\'\s*\s*(.+?)\s*\'\>/i // pattern : <'path/to/file'>
           }]
         ]

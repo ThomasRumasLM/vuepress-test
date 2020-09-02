@@ -11,18 +11,8 @@ features:
 - title: FMK, JS and SCSS Helpers
   details: Functions and mixins to ease and simplify your development.
 - title: Tools and workflows
-  details: Guidelines, project architecture, W3C validators, contributing workflows etc.
+  details: Guidelines, project structure, W3C validators, contributing workflows, monitoring dashboard etc.
 footer: Documentation - CDP Core
 ---
 
-# Home
-
-Liste d'articles sur l'activité de l'équipe Core
-
-Home pour expliquer l'archi des trois socles techniques
-
-[Mozaic Base](http://mozaic.adeo.cloud/)
-
-[Mozaic Freemarker](https://github.com/adeo/mozaic-freemarker)
-
-[Mozaic VueJS](https://github.com/adeo/mozaic-vue)
+[Mozaic Base](http://mozaic.adeo.cloud/) / [Mozaic Freemarker](https://github.com/adeo/mozaic-freemarker) / [Mozaic VueJS](https://github.com/adeo/mozaic-vue)

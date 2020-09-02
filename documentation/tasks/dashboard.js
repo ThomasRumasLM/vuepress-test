@@ -8,12 +8,12 @@ const colors = require('colors/safe');
 // ---------------- VARS --- /
 const turbineEnv = 'cdp-due-website-frlm-uat1';
 const generatorApiUrl = 'api.github.com/repos/adeo/';
-const turbineToken = process.env.npm_config_turbinetoken || process.env.turbinetoken;
-const token = process.env.npm_config_githubToken || process.env.githubToken;
+const turbineToken = process.env.npm_config_turbineToken || process.env.turbineToken;
+const githubToken = process.env.npm_config_githubToken || process.env.githubToken;
 
-if (!token || !turbineToken) {
-  if (!token) {
-    console.log('No environment variable found for <token>');
+if (!githubToken || !turbineToken) {
+  if (!githubToken) {
+    console.log('No environment variable found for <githubToken>');
   }
   if (!turbineToken) {
     console.log('No environment variable found for <turbineToken>');
@@ -55,7 +55,7 @@ const getURL = (url, authorization, fn) => {
 };
 
 const getGithubFile = (url, fn) => {
-  getURL(url, `token ${token}`, response => {
+  getURL(url, `token ${githubToken}`, response => {
     // console.log(`RESPONSE: ${response.substring(0, 300)}`);
     const res = JSON.parse(response);
     if (res.message === 'Not Found' || res.message === 'Moved Permanently') {

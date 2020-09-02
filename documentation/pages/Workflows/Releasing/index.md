@@ -5,4 +5,10 @@ order: 5
 
 # Releasing
 
-> Coming soon
+:::: tabs
+
+::: tab Eproxyecom - Marcopolo fast releases
+<'Workflows/Releasing/eproxyecom.md'>
+:::
+
+::::
