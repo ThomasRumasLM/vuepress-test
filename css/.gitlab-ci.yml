@@ -1,7 +1,0 @@
-variables:
-  GITHUB_URL: git@github.com:adeo/lmfr-int-socle-scss
-
-include:
-  - project: "adeotech/leroy-merlin-france/lmfr-web/lmfr-web-cicd"
-    file: "/pipelines/node-lib-project.gitlab-ci.yml"
-    ref: "master"

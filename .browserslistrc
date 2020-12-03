@@ -1,5 +1,0 @@
-# Browsers that we support (used for autoprefixer AND babel)
-
-last 2 versions
-firefox >= 45
-IE >= 11
